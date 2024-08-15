@@ -1,0 +1,416 @@
+/* CSS styles only mean as placeholders.
+ Front end team will decide how the final product will look */
+body,html
+{
+    margin: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    animation: animatedBackground 40s linear infinite;
+}
+
+@keyframes animatedBackground {
+
+}
+
+.bg-layer {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    /*margin-top: -25vh;*/
+    min-height: 100vh;
+    margin: auto;
+    width: 100%;
+}
+
+form.jumbotron{
+    top:20%;
+    right: 0px;
+    margin: 0px auto;
+    width: 400px;
+    position: relative;
+    border-radius: 0px;
+}
+
+button
+{
+    opacity: 0.9;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 0px;
+    font-family: 'Hind', sans-serif;
+}
+
+#txtsignup{
+    text-align: center  !important;
+}
+
+.form-control {
+    border-radius: 0px;
+    background-image: none;
+    color: black;
+}
+
+#alertMessage {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.9;
+    color: red;
+    font-size: 15px;
+}
+
+.heading-avatar-icon{
+  text-align: center !important;
+  width: 150px;
+  height: 125px;
+  border-radius: 10px;
+  /*margin-left: 35%;*/
+}
+
+.jumbotron {
+    background-color: white !important;
+}
+
+@media(max-width: 575px){
+    .bg-layer {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: absolute;
+        margin-top: -30px;
+        min-height: 100vh;
+        margin: auto;
+    }
+    .reset-cancel-btn {
+        margin-right: 0px !important;
+        margin-bottom: 10px;
+    }
+}
+
+.container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+@media(max-width: 450px) {
+    .container-fluid {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+}
+
+.register-form {
+    height: auto;
+    top: 25px !important;
+    padding: 2rem;
+    margin-top: 55px !important;
+    min-width: 750px;
+}
+
+@media(max-width: 400px){
+    .bg-layer {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        position: absolute;
+        margin-top: -30px !important;
+        min-height: 100vh;
+        margin: auto;
+    }
+}
+
+.login-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.login-bottom-remember {
+    font-size: 17px;
+    color: rgb(103, 84, 88) !important;
+}
+
+.login-bottom-forgot {
+    font-size: 17px;
+    color: rgb(2, 118, 134) !important;
+}
+
+.login-header {
+    font-family: "Open Sans", Helvetica, Arial, "sans-serif";
+    font-weight: 600;
+    text-align: left;
+    margin: 0px 0px 8px;
+    color: black !important;
+    font-size: 48px;
+    letter-spacing: 2px;
+}
+
+.login-subtitle {
+    color: rgb(103, 84, 88) !important;
+    margin: 0px 5px 0px 0px;
+    font-size: 18px;
+}
+
+.login-signup-href {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(2, 118, 134);
+}
+
+.login-form {
+    background-color: #f2f5f7 !important;
+    min-width: 400px !important;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.register-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login-content-image {
+    margin-left: 250px !important;
+    padding-right: 75px !important;
+}
+
+.register-content-image {
+    margin-left: 145px !important;
+}
+
+.login-label {
+    color: black !important;
+    font-size: 20px;
+}
+
+.register-label {
+    color: black !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.register-title {
+    font-size: 36px;
+    font-weight: 600;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    opacity: 1;
+    margin: 32px 0px 16px;
+    letter-spacing: 1.5px;
+}
+
+.register-subtitle {
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+}
+
+.register-subtitle-plan {
+    color: rgb(0, 180, 204) !important;
+}
+
+.login-btn-text {
+    font-style: normal;
+    font-weight: 600;
+    padding: 10px 24px;
+    font-size: 24px;
+    line-height: 110%;
+    border: 2px solid transparent;
+    background-color: rgb(2, 118, 134);
+    border-radius: 6px;
+}
+
+.login-btn-text {
+    font-style: normal;
+    font-weight: 600;
+    padding: 10px 24px;
+    font-size: 24px;
+    line-height: 110%;
+    border: 2px solid transparent;
+    background-color: rgb(2, 118, 134);
+    color: white !important;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.register-btn {
+    font-style: normal;
+    font-weight: 600;
+    padding: 8px 24px;
+    font-size: 16px;
+    line-height: 110%;
+    border: 2px solid transparent;
+    background-color: rgb(2, 118, 134);
+    color: white;
+    max-width: 400px !important;
+    border-radius: 6px;
+}
+
+.register-btn-label {
+    font-size: 24px;
+    color: white;
+}
+
+.login-bottom-remember, .login-bottom-forgot, .login-btn-text {
+    cursor: pointer;
+}
+
+.login-pass-input {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-pass-inputtag {
+    width: 100%;
+    padding: 7px 8px;
+    font-family: "Open Sans", Helvetica, Arial, "sans-serif";
+    outline: none;
+    border: 1px solid #ced4da;
+}
+
+.pass-icon {
+    margin-left: 0px;
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+}
+
+.modal-header {
+    border: none;
+    padding-bottom: 5px;
+}
+
+.modal-title {
+    font-family: "Open Sans", Helvetica, Arial, "sans-serif";
+    font-weight: 600;
+    text-align: left;
+    margin: 0px;
+    font-size: 32px !important;
+}
+
+
+@media only screen and (max-width:1400px) {
+    .login-content-image {
+        display: none !important;
+        margin-left: 0px !important;
+    }
+    .login-form {
+        justify-content: center !important;
+        margin-left: 0px !important;
+    }
+    .login-content {
+        justify-content: center !important;
+    }
+    .register-content {
+        justify-content: center;
+    }
+    .register-form {
+        min-width: 650px;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .register-form {
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+        margin-top: 0px !important;
+    }
+    .register-title {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (max-width:490px) {
+    .register-form {
+        min-width: 500px !important;
+    }
+}
+
+.modal-dialog {
+    max-width: 400px !important;
+    margin: 1.75rem auto;
+}
+
+.modal {
+    top : 20% !important;
+}
+
+.modal-body {
+    font-size: 15px;
+    color: black;
+    padding-top: 10px !important;
+    padding-bottom: 5px !important;
+}
+
+.modal-footer {
+    border:none !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 0px;
+}
+
+.reset-pass-btn {
+    width: 100% !important;
+    justify-content: end;
+}
+
+.reset-cancel-btn {
+    font-style: normal;
+    font-weight: 600;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 110%;
+    border: 2px solid rgb(2, 118, 134);
+    background-color: white;
+    color: rgb(2, 118, 134);
+}
+
+.reset-cancel-btn:hover {
+    background-color: rgb(244, 244, 244);
+    border: 2px solid rgb(2, 118, 134);
+}
+
+.reset-send-btn {
+    font-style: normal;
+    font-weight: 600;
+    padding: 8px 24px;
+    font-size: 16px;
+    line-height: 110%;
+    border: 2px solid transparent;
+    background-color: rgb(2, 118, 134);
+    color: white;
+}
+
+.reset-send-btn:hover {
+    background-color: rgb(1, 82, 93);
+}
+
+@media only screen and (max-width:380px) {
+    .login-header {
+        margin: 0px 0px 30px !important;
+        font-size: 44px !important;
+    }
+    .login-form {
+        min-width: 335px !important;
+    }
+}

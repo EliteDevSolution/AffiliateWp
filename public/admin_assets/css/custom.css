@@ -1,0 +1,140 @@
+.left-side-menu {
+    background-color: #263544;
+}
+
+.nav-second-level>li>a {
+    color: #b7c0cd;
+}
+
+#sidebar-menu>ul>li>a.active,
+.nav-second-level li.active>a {
+    color: #b7c0cd;
+}
+
+.navbar-custom,
+.nav-backcolor {
+    background-color: #38414a !important;
+}
+
+.close-jq-toast-single {
+
+    top: -10px !important;
+    right: -10px !important;
+
+}
+
+#copyBtn:hover {
+    color: #f7f6f6;
+}
+
+.nav-second-level li a:focus,
+.nav-second-level li a:hover,
+.nav-thrid-level li a:focus,
+.nav-thrid-level li a:hover {
+    color: white;
+}
+
+#sidebar-menu>ul>li>a:active,
+#sidebar-menu>ul>li>a:focus,
+#sidebar-menu>ul>li>a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#sidebar-menu>ul>li>a {
+    color: #c9cacc;
+    display: block;
+    padding: 13px 20px;
+    position: relative;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    font-size: .825rem;
+}
+
+.nav-second-level li.active>a,
+.nav-third-level li.active>a {
+    color: white;
+}
+
+#sidebar-menu>ul>li>a.active,
+.nav-second-level li.active>a {
+    color: white;
+}
+
+i {
+    cursor: pointer;
+}
+
+.toolbar-text:hover {
+    text-decoration:none;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white !important;
+}
+
+.logo {
+    height: 100%;
+}
+
+.logo-lg {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.logined-toolbar {
+    margin-left: 100px;
+}
+
+.topbar-user-logo {
+    margin-right: 3.5rem !important;
+}
+
+.logo-title {
+    color: rgba(255, 255, 255, .6);
+    font-size: 22px;
+    letter-spacing: 0.7px;
+}
+
+.top-link {
+    color: rgba(255, 255, 255, .6);
+    font-size: 17px;
+}
+#topnav .topbar-menu {
+    margin-top: -20px !important;
+}
+
+.topbar-logo {
+    margin-left: 11rem !important;
+}
+
+#topnav .navbar-toggle span {
+    background-color: black !important;
+}
+
+.navbar-custom {
+    box-shadow:rgba(0, 0, 0, 0.15) 0px 2px 16px !important;
+}
+
+.navigation-menu {
+    background-color: #FFDD00;
+}
+.has-submenu {
+    border-bottom: 1px solid rgb(254, 189, 17);
+}
+.has-submenu:hover {
+    background-color:rgb(254, 189, 17);
+}
+
+@media only screen and (max-width:1000px) {
+    .topbar-user-logo {
+        margin-right: 0rem !important;
+    }
+}
+
+.alert-danger {
+    color: #fff !important;
+    background-color: #f1556c !important;
+    border-color: none;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}

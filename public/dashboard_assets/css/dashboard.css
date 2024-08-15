@@ -1,0 +1,262 @@
+.dash-topart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.inform-protect {
+    border: 0.5px solid rgb(0, 191, 98);
+    border-radius: 5px;
+    gap: 40px;
+    justify-content: space-between;
+    padding: 10px;
+    justify-items: center;
+}
+
+.form-control {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.login-label {
+    color: black !important;
+}
+
+.protect-icon {
+    font-size: 20px;
+    color: green;
+}
+
+.protect-icon-part {
+    gap: 10px;
+    color: green;
+    max-width: 130px;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.approved-part-app {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.approved-part-label {
+    font-size: 10px;
+}
+
+.project-social-image {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 27px;
+}
+
+.social-card-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.social-card-name {
+    font-size: 20px;
+    color: black !important;
+    padding-top: 5px;
+}
+
+.dashboard-header-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+}
+
+.card-body-text {
+    font-size: 14px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.card-btn {
+    color: white;
+    background-color : #2a9b85;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding : 8px 24px;
+}
+
+.connect-us {
+    font-size : 20px;
+    color: #027686;
+}
+
+.connect-us-btn {
+    font-style: normal;
+    font-weight: 600;
+    padding: 8px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    line-height: 110%;
+    border: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.connect-us-part {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.agent-part {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    border-radius: 10px;
+    background: rgb(43 115 46 / 78%);
+    padding: 18px 16px 18px 24px;
+    flex-direction: row;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 140px;
+}
+
+.agent-part-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.agent-part-image-text {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.agent-explain-part-text {
+    font-size: 14px;
+    color: rgb(255, 221, 0);
+}
+
+.agent-part-btn {
+    background-color: white;
+    color: rgb(2, 118, 134);
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.create-account-panel {
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+.wrapper {
+    padding: 60px 12px 0 12px !important;
+}
+
+@media only screen and (max-width:1200px) {
+    .create-account-panel {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .inform-protect {
+        margin-top: 10px !important;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .dashboard-header-title-responsive {
+        margin-top: 10px !important;
+        font-size: 30px !important;
+    }
+    .inform-protect-motherboard {
+        padding-right: 0px !important;
+        padding-top: 20px;
+        width: 100%;
+        padding-left: 10px !important;
+    }
+    .mobile-protect-title {
+        text-align: center !important;
+        width: 100% !important;
+        font-size: 24px !important;
+        color: black !important;
+        margin-top: 30px !important;
+    }
+    .social-section {
+        display:  block !important;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+    }
+    .social-card-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-image {
+        width: 30px !important;
+        height: 30px !important;
+        margin: auto;
+    }
+    .social-card-name {
+        padding: 0px;
+    }
+    .card-btn {
+        margin-top: 0px !important;
+        font-size: 13px;
+    }
+    .card-body-text {
+        padding-top : 0px;
+    }
+    .agent-part {
+        padding: 20px;
+        justify-content: center;
+        gap: 6px;
+        margin: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .connect-us-part {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+
+@media only screen and (max-width:380px) {
+    .inform-protect {
+        gap: 0px !important;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        gap: 10px;
+    }
+}

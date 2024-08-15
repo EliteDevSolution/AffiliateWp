@@ -1,0 +1,127 @@
+
+.verify-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: black;
+}
+
+.verify-container-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.verify-container-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 63px;
+    padding-top: 26px;
+    width: 100%;
+}
+
+.verify-container-bottom::before {
+    left: 160px;
+    content: "";
+    background: rgb(144, 144, 144);
+    width: 70%;
+    height: 0.5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    position: absolute;
+    top: 0px;
+}
+
+.verify-container-top-informs {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.middle-line {
+    border-bottom: 1px solid black;
+}
+
+.verify-container-informs-header {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.verify-container-informs-body {
+    margin: auto;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+}
+
+.verification-code-input {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.verify-code-input-text {
+    height: 40px;
+    padding: 7px 8px;
+    font-size: 14px;
+    border: 1px solid rgb(144, 144, 144);
+    border-radius: 4px;
+    font-family: "Open Sans", Helvetica, Arial, "sans-serif";
+    width: 100px;
+    color: rgb(35, 31, 32);
+    align-self: flex-start;
+    min-width: 150px;
+}
+
+.verify-code-input-btn {
+    font-style: normal;
+    font-weight: 600;
+    padding: 8px 24px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    line-height: 110%;
+    border: 2px solid transparent;
+    background-color: rgb(2, 118, 134);
+}
+
+@media only screen and (max-width:700px) {
+
+}
+
+@media only screen and (max-width:990px) {
+    .verify-container-top {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .verify-container-bottom::before {
+        left: 0px !important;
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .verification-code-input {
+        gap: 10px !important;
+    }
+    .verify-code-input-text {
+        min-width: 100px !important;
+    }
+    .verify-container-bottom {
+        margin-top: 25px;
+        padding-top: 25px;
+    }
+}
