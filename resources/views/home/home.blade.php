@@ -389,7 +389,7 @@
 
     <script>
         const swiper = new Swiper('.swiper-container', {
-            loop: true,
+            loop: false,
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
             slidesPerView: 1,
