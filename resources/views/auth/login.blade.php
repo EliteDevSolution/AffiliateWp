@@ -47,9 +47,7 @@
                             <i class="far fa-eye-slash pass-icon" id="togglePassword"></i>
                         </div>
                         <button type="submit" class="login-btn-text mt-2">
-                            <span class="login-btn-text">
-                                Login
-                            </span>
+                            Login
                         </button>
                         <div class="login-bottom pt-3">
                             <span class="login-bottom-remember text-black-50">

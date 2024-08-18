@@ -38,7 +38,7 @@
                 font-size : 15px;
             }
             .footer-logo-lg {
-                padding-left: 70px !important;
+                margin-left: 1rem !important;
             }
         </style>
     </head>

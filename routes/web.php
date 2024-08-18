@@ -32,6 +32,8 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
 
     Route::resource('/postflow', 'Postflow\PostflowController');
 
+    Route::get('/facebook-login', 'Social\FacebookController@go_to_facebook')->name('facebook-login');
+
     Route::resource('permissions', 'Admin\PermissionsController');
     Route::delete('permissions_mass_destroy', 'Admin\PermissionsController@massDestroy')->name('permissions.mass_destroy');
     Route::resource('roles', 'Admin\RolesController');

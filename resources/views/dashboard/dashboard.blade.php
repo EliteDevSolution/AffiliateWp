@@ -54,7 +54,7 @@
                             <span class="social-card-name">Facebook</span>
                         </div>
                         <span class="card-body-text">Connect your Facebook business page</span>
-                        <a href="javascript:void(0);" class="card-btn btn btn-primary waves-light mt-4">Connect</a>
+                        <a href="{{route('facebook-login')}}" class="card-btn btn btn-primary waves-light mt-4">Connect</a>
                     </div>
                 </div>
 
