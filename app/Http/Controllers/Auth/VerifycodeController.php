@@ -128,7 +128,7 @@ class VerifycodeController extends Controller
         $during_time = $current_time->diffInMinutes($created_at);
 
         if( $during_time <= 60 ) {
-            if( $verify_db_code = $request['verify_code'] ) {
+            if( $verify_db_code === $request['verify_code'] ) {
                 try {
                     $register_data = session()->get('register_data');
                     $register_data['status'] = 'Approve';
