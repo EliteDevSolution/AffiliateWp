@@ -25,7 +25,7 @@
                 <!-- <h3 style="line-height: 24px;">This is <strong></strong></h3> -->
                 {{-- {{$mail_data['first_name']   ['verify_code']}} --}}
                 <h3 style="color: #B962A8; margin-top: 50px;">
-                    {{$mail_data['first_name']}}
+                    {{$mail_data['first_name'] ?? ""}}
                 </h3>
                 <p style="line-height: 24px; margin-top: 30px; font-size: 13px; max-width: 450px;">
                     We are happy that you sign up for FANSTOSELLERS.
@@ -33,7 +33,7 @@
                 </p>
                 <div style="line-height: 24px; margin-top: 40px; background-color: #027686; color: white; padding: 20px 15px;">
                     <span style="color:white; font-size:18px; text-decoration:none">
-                        {{$mail_data['verify_code']}}
+                        {{$mail_data['verify_code'] ?? ""}}
                     </span>
                 </div>
                 <div style="border: 1px solid gray; margin-top: 40px; margin-bottom: 30px;"></div>

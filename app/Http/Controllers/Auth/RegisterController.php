@@ -98,7 +98,7 @@ class RegisterController extends Controller
 
         $verify_code = sprintf("%06d", mt_rand(1, 999999));
 
-        $mail_data = [
+        $data = [
             "verify_code" => $verify_code,
             "first_name" => $request->all()["firstname"]
         ];
@@ -113,7 +113,7 @@ class RegisterController extends Controller
 
             // Mail::to($mail)->send(new UserReadyMail($mail_data));
 
-            Mail::send('admin.mails.user_ready', $mail_data, function ($message) {
+            Mail::send('admin.mails.user_ready', $data, function ($message) {
                 $message->to('fstorm707@gmail.com', 'Recipient Name')
                         ->subject('Test Email');
             });
