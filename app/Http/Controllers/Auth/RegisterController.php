@@ -98,20 +98,20 @@ class RegisterController extends Controller
 
         $verify_code = sprintf("%06d", mt_rand(1, 999999));
 
-        $data_to_mail = [
+        $mail_data = [
             "verify_code" => $verify_code,
             "first_name" => $request->all()["firstname"]
         ];
 
+        $mail = $request->all()["email"];
+
         try {
-            VerifyCode::updateOrCreate(['email' => $request->all()["email"]], [
-                'email'   =>   $request->all()["email"],
+            VerifyCode::updateOrCreate(['email' => $mail], [
+                'email'   =>   $mail,
                 'verify_code' => $verify_code,
             ]);
 
-            $mail = $request->all()["email"];
-
-            @Mail::to($mail)->send(new UserReadyMail($data_to_mail));
+            Mail::to($mail)->send(new UserReadyMail($mail_data));
 
             session()->put('register_data', $request->all());
             return redirect('/verifycode');
