@@ -8,7 +8,7 @@
 @section('content')
     <div class="row m-auto">
         <div class="col-12">
-            <div class="register-content mt-4">
+            <div class="register-content">
 
                 <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="rounded-circle register-content-image d-none d-lg-block" height="200">
                 <form class="text-center register-form" role="form" method="POST" action="{{ url('register') }}">

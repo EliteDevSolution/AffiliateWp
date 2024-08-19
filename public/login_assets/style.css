@@ -19,7 +19,6 @@ body,html
     background-attachment: fixed;
     background-size: cover;
     position: absolute;
-    /*margin-top: -25vh;*/
     min-height: 100vh;
     margin: auto;
     width: 100%;
@@ -105,8 +104,12 @@ button
     height: auto;
     top: 25px !important;
     padding: 2rem;
-    margin-top: 55px !important;
     min-width: 750px;
+}
+
+.login-container {
+    margin: auto !important;
+    min-height: 100vh;
 }
 
 @media(max-width: 400px){
@@ -167,13 +170,18 @@ button
 .login-content {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding-bottom:50px;
 }
 
 .register-content {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 100vh;
+    padding-bottom: 50px;
+    justify-content: center;
 }
 
 .login-content-image {
@@ -182,7 +190,6 @@ button
 }
 
 .register-content-image {
-    margin-left: 145px !important;
 }
 
 .login-label {
@@ -327,6 +334,7 @@ button
     }
     .register-form {
         min-width: 650px;
+        margin-top: 50px !important;
     }
 }
 
@@ -334,7 +342,7 @@ button
     .register-form {
         padding-left: 100px !important;
         padding-right: 100px !important;
-        margin-top: 0px !important;
+        margin-top: 90px !important;
     }
     .register-title {
         text-align: center !important;

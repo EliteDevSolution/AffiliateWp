@@ -8,9 +8,9 @@
 
 @section('content')
     <div class="bg-layer">
-        <div class="row mobile-login-responsive justify-content-between m-auto">
+        <div class="row login-container justify-content-between m-auto">
             <div class="col-12">
-                <div class="login-content mt-5">
+                <div class="login-content">
                     <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="rounded-circle mt-5 d-none d-lg-block login-content-image" height="200">
                     <form class="login-form mt-5 text-center" role="form" method="POST" action="{{ url('login') }}">
                         <p class="login-header text-center">Welcome Back!</p>
