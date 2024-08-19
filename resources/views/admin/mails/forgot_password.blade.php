@@ -30,7 +30,7 @@
                     If you didn't make this request, ignore this email.
                 </h4>
                 <p style="line-height: 24px; width: 115px; margin: auto; background-color: #027686; color: white; padding: 10px 15px; border-radius: 5px;">
-                    <a href="https://masmoney.es/login/reset_password/{{$mail_data}}" style="color:white;   font-size:15px; text-decoration:none">
+                    <a href="https://masmoney.es/reset_password/{{$mail_data}}" style="color:white;   font-size:15px; text-decoration:none">
                         Reset password
                     </a>
                 </p>
