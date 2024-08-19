@@ -113,13 +113,8 @@ class RegisterController extends Controller
 
             // Mail::to($mail)->send(new UserReadyMail($mail_data));
 
-            $data = [
-                    'name' => 'John Doe',
-                    'message' => 'This is a test email.'
-                ];
-
-            Mail::send('fstorm707@gmail.com', $data, function ($message) {
-                $message->to('admin@masmoney.es', 'Recipient Name')
+            Mail::send('admin.mails.user_ready', $mail_data, function ($message) {
+                $message->to('fstorm707@gmail.com', 'Recipient Name')
                         ->subject('Test Email');
             });
 
