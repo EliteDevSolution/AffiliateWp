@@ -126,7 +126,16 @@
         });
 
         let forgot_password = () => {
-            elementBlock('square1', 'body');
+            if( $("#forgot_password_email").val() === "" ) {
+                $.NotificationApp.send("Alarm!"
+                    ,"Type your email address please!"
+                    ,"top-right"
+                    ,"#2ebbdb"
+                    ,"error",
+                );
+                return;
+            }
+            elementBlock('square1', '.modal-dialog');
             $.ajax({
                 type: "POST",
                 url: 'forgot_password',
@@ -150,7 +159,7 @@
                         ,"error",
                     );
                 }
-                elementUnBlock('body');
+                elementUnBlock('.modal-dialog');
             }).fail(function(xhr, textStatus, errorThrown) {
                 $.NotificationApp.send("Alarm!"
                     ,"Failed verify email!"
@@ -158,7 +167,7 @@
                     ,"#2ebbdb"
                     ,"error",
                 );
-                elementUnBlock('body');
+                elementUnBlock('.modal-dialog');
             });
         }
     </script>

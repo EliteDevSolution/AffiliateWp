@@ -1,3 +1,4 @@
+
 var realname;
 var realemail;
 var curtime;
@@ -8,7 +9,7 @@ $(document).ready(function () {
 
 
     var searchTerm;
-    // This function fetches the GIFs from Tenor API 
+    // This function fetches the GIFs from Tenor API
     $('#input-msg').on('change', function (e) {
         if ($(this).val() == '') return;
         $('.imagetmp').css("display", "block");
@@ -79,7 +80,7 @@ $(document).ready(function () {
 
     // $(document).on("click", "#add-gif", testAPI);
     // $(document).on("click", ".gif-thumb", sendGIF);
-    
+
 });
 
 
@@ -99,7 +100,7 @@ function handlesignUpBtnClick() {
             alertMessage(errorMessage);
         }).then(addToDatabase)
 
-        //function to update the database 
+        //function to update the database
         function addToDatabase() {
             if (!hasError) {
                 console.log(3, hasError);
@@ -114,7 +115,7 @@ function handlesignUpBtnClick() {
         }
     }
 };
-//function to handle the form and verify if the form filled properly or not 
+//function to handle the form and verify if the form filled properly or not
 function validateForm(userName, password, password2) {
     var validForm = true;
     var alphanumeric = /^[a-zA-Z0-9]+$/
@@ -137,7 +138,7 @@ function validateForm(userName, password, password2) {
 };
 
 
-//function that allows users to be able to sign in 
+//function that allows users to be able to sign in
 function signIn() {
     event.preventDefault()
     var email = $('#emailInput').val().trim() + '@rhahekel.com';
@@ -218,12 +219,12 @@ function displayUserAvailable(user) {
                                     <p>Sahar left 7 mins ago</p>
                                 </div>
                             </div>
-                        </li>`;                        
+                        </li>`;
             $(`#userListSection`).append(htmlText);
- 
+
 
             //LEAVE IT HERE I WILL USE IT LATER ///
-            //setting up a listener on all buttons 
+            //setting up a listener on all buttons
             // $(`#allOtherUser-${databaseUsername}`).on('click', function () {
             //     handlePlayerUserNameBtnClick(currentUser, databaseUsername);
             // })
@@ -246,7 +247,7 @@ function sendGIF(item) {
                             </div>`;
 
     $('#gifModal').modal('show');
-    $('#gif-preview').html(htmlText);   
+    $('#gif-preview').html(htmlText);
 };
 
 function timeNow() {
@@ -260,7 +261,7 @@ function timeNow() {
 }
 
 $('#append-gif').on('click', function(evt)
-{   
+{
     var hiddenMsg = $("#gif-message-text").val();
     var src = $(sendItem).attr('src');
     timeNow();
@@ -278,7 +279,7 @@ $('#append-gif').on('click', function(evt)
                                     <span class="msg_time">${curtime}</span>
                                 </div>
                             </div>`;
-     $('#msg-content').append(htmlText);                            
+     $('#msg-content').append(htmlText);
      $("#gif-message-text").val("");
      $('#gifModal').modal('toggle');
      autoScroll();
