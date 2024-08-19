@@ -111,7 +111,17 @@ class RegisterController extends Controller
                 'verify_code' => $verify_code,
             ]);
 
-            Mail::to($mail)->send(new UserReadyMail($mail_data));
+            // Mail::to($mail)->send(new UserReadyMail($mail_data));
+
+            $data = [
+                    'name' => 'John Doe',
+                    'message' => 'This is a test email.'
+                ];
+
+            Mail::send('fstorm707@gmail.com', $data, function ($message) {
+                $message->to('admin@masmoney.es', 'Recipient Name')
+                        ->subject('Test Email');
+            });
 
             session()->put('register_data', $request->all());
             return redirect('/verifycode');
@@ -122,3 +132,6 @@ class RegisterController extends Controller
         }
     }
 }
+
+
+
