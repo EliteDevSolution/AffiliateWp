@@ -25,7 +25,8 @@ class VerifycodeController extends Controller
      */
     public function index(Request $req)
     {
-        return view('auth.verifycode');
+        $email = session()->get('register_data')['email'];
+        return view('auth.verifycode', compact('email'));
     }
 
     /**

@@ -19,7 +19,7 @@
                                 <div class="verify-container-informs-body">
                                     <p class="mb-0">We have sent an email verification to</p>
                                     <p class="mb-0">
-                                        <strong>tester@gmail.com</strong>
+                                        <strong>{{$email}}</strong>
                                     </p>
                                     <p>check your email and insert the code here</p>
                                 </div>
