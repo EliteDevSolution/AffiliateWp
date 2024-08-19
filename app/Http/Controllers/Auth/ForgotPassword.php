@@ -22,7 +22,7 @@ class ForgotPassword extends Controller
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]);
 
-            @Mail::to("super@localhost.com")->send(new ForgotPasswordMail($request['email']));
+            @Mail::to($request['email'])->send(new ForgotPasswordMail($request['email']));
             return response()->json([
                 'status' => 'Your email is sent'
             ]);
