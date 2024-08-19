@@ -93,7 +93,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            If you encounter any problem, please contact us at support@socialpiper.com or use our live chat.
+                                            If you encounter any problem, please contact us at support@masmoney.es or use our live chat.
                                         </div>
                                     </div>
                                 </div>
