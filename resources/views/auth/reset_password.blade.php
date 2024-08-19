@@ -75,7 +75,7 @@
                 }
             }).fail(function(xhr, textStatus, errorThrown) {
                 $.NotificationApp.send("Alarm!"
-                    ,"Your password is correctly changed!"
+                    ,"This server seems have some problem"
                     ,"top-right"
                     ,"#2ebbdb"
                     ,"error",
