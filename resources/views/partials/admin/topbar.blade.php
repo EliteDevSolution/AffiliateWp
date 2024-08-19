@@ -3,10 +3,10 @@
 
         <div class="logo-box topbar-logo">
             <div class="logo text-right">
-                <span class="logo-lg d-lg-flex flex-row">
+                <a class="logo-lg d-lg-flex flex-row" href="/">
                     <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="rounded-circle" height="34">
                     <h4 class="logo-title ml-1 mt-sm-1 pt-1">@lang('FANSTOSELLERS')</h4>
-                </span>
+                </a>
             </div>
         </div>
 

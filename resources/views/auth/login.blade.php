@@ -133,6 +133,7 @@
                     ,"#2ebbdb"
                     ,"error",
                 );
+                $("#forgot_password_email").focus();
                 return;
             }
             elementBlock('square1', '.modal-dialog');
