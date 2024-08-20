@@ -18,14 +18,18 @@ class FacebookController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function index()
+    public function __construct()
+    {
+        $this->facebook = new FacebookProvider();
+    }
+
+    public function index()
     {
 
     }
 
      public function go_to_facebook()
     {
-        $this->facebook = new FacebookProvider();
         $url = $this->facebook->getFaceBookLoginUrl();
         return redirect($url);
     }
@@ -76,10 +80,10 @@ class FacebookController extends Controller
     }
 
     public function redirecet_facebook() {
-        $this->facebook = new FacebookProvider();
         $helper = $this->facebook->facebookHelper();
         try {
             $accessToken = $helper->getAccessToken();
+            dd($accessToken->getValue());
         } catch(Facebook\Exception\ResponseException $e) {
         // When Graph returns an error
             echo 'Graph returned an error: ' . $e->getMessage();

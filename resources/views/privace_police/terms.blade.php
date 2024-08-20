@@ -11,10 +11,9 @@
         left: 0;
         right: 0;
         top: 30;
-        padding-bottom: 60px;
+        padding-bottom: 100px;
     }
 </style>
-
 
 @section('content')
 

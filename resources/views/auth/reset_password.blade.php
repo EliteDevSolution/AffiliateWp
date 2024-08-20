@@ -7,8 +7,8 @@
     <div class="reset_password_box">
         <div class="password_header">
             <div class="password_header_title">
-                <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="rounded-circle" height="50" width="50">
-                <p class="password_header_title_text">FANSTOSELLERS</p>
+                <img src="{{ asset('/login_assets/bg/logo_black.png') }}" alt="user-image" class="password_logo">
+                {{-- <p class="password_header_title_text">MASMONEY</p> --}}
             </div>
             <p class="change-password_title">
                 Change Password
@@ -16,10 +16,10 @@
         </div>
 
         <div class="password_body">
-            <p class="enter_password">Enter a new password for</p>
+            <span class="enter_password">Enter a new password for</span>
             <span class="your_email">{{$to_update_email}}</span>
-            <input class="input_password" type="password" id="new_password" placeholder="your new password">
-            <input class="input_password" type="password" id="confirm_password" placeholder="confirm your new password">
+            <input class="input_password" type="password" id="new_password" placeholder="Your new password">
+            <input class="input_password" type="password" id="confirm_password" placeholder="Confirm your new password">
             <button class="reset_password_btn" onclick="reset_password()">
                 Reset password
             </button>

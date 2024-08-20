@@ -23,7 +23,7 @@ class FacebookProvider extends ServiceProvider
     {
         $helper = $this->facebook->getRedirectLoginHelper();
         $permissions = ['email'];
-        $url = $helper->getLoginUrl('https://masmoney.es/facebook-callback', $permissions);
+        $url = $helper->getLoginUrl(config('facebook.redirect'), $permissions);
         return $url;
     }
 

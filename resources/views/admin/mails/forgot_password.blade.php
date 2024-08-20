@@ -21,7 +21,7 @@
     <div style="width: 100%; height: 100%; position: relative; display:flex; background-color: #FAFAFA;">
         <div style="max-width: 800px; margin: auto;">
             <div style="background-color: white; border: solid 1px #ccc; border-radius: 5px; padding: 20px; font-family: Arial, Helvetica, sans-serif; text-align: center;">
-                <h2 style="line-height: 24px;"><strong>FANSTOSELLERS</strong></h2>
+                <h2 style="line-height: 24px;"><strong>MASMONEY</strong></h2>
                 <!-- <h3 style="line-height: 24px;">This is <strong>{{$mail_data}}</strong></h3> -->
                 <h4 style="line-height: 24px; margin-top: 50px;">
                     If you requested a password reset, click the button below.
