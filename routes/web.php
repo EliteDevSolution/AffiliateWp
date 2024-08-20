@@ -7,26 +7,23 @@ Route::get('lang/{locale}',function ($locale){
 Auth::routes(['register' => true]);
 
 // Change Password Routes...
-Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
-Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
+Route::get('change-password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change-password');
+Route::patch('change-password', 'Auth\ChangePasswordController@changePassword')->name('auth.change-password');
 
 Route::resource('verifycode', 'Auth\VerifycodeController');
 Route::post('verifycode/confirm-code', 'Auth\VerifycodeController@confirm_code');
 
-Route::post('forgot_password', 'Auth\ForgotPassword@reset_password');
+Route::post('forgot-password', 'Auth\ForgotPassword@reset_password');
 
 Route::resource('privace-police', 'Privacy_Policy\PoliceController');
 
 Route::resource('terms-condition', 'Privacy_Policy\TermsController');
 
-Route::post('forgot_password', 'Auth\ForgotPassword@reset_password');
-
-
-Route::resource('reset_password/{email}', 'Auth\ResetPasswordController')->only(['index'])->names([
+Route::resource('reset-password/{email}', 'Auth\ResetPasswordController')->only(['index'])->names([
     'index' => 'reset.index',
 ]);
 
-Route::post('reset_password/update_password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
+Route::post('reset-password/update_password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
 
 Route::group(['middleware' => ['auth', 'approved']], function () {
 

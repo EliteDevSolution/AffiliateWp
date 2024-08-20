@@ -10,7 +10,7 @@
                 <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="rounded-circle" height="50" width="50">
                 <p class="password_header_title_text">FANSTOSELLERS</p>
             </div>
-            <p class="change_password_title">
+            <p class="change-password_title">
                 Change Password
             </p>
         </div>
