@@ -15,6 +15,13 @@ Route::post('verifycode/confirm-code', 'Auth\VerifycodeController@confirm_code')
 
 Route::post('forgot_password', 'Auth\ForgotPassword@reset_password');
 
+Route::resource('privace-police', 'Privacy_Policy\PoliceController');
+
+Route::resource('terms-condition', 'Privacy_Policy\TermsController');
+
+Route::post('forgot_password', 'Auth\ForgotPassword@reset_password');
+
+
 Route::resource('reset_password/{email}', 'Auth\ResetPasswordController')->only(['index'])->names([
     'index' => 'reset.index',
 ]);

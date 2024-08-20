@@ -10,7 +10,7 @@
         <div class="col-12">
             <div class="register-content">
 
-                <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="rounded-circle register-content-image d-none d-lg-block" height="200">
+                <img src="{{ asset('/login_assets/bg/logo1.jpg') }}" alt="user-image" class="rounded-circle register-content-image d-none d-lg-block" height="200">
                 <form class="text-center register-form" role="form" method="POST" action="{{ url('register') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <h2 class="register-title pb-3">Create your account</h2>

@@ -8,7 +8,7 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('user_assets/images/logo-sm.png') }}">
+        <link rel="shortcut icon" href="{{ asset('login_assets/bg/logo1.jpg') }}">
         <!-- App css -->
         <link href="{{ asset('admin_assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('admin_assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -26,19 +26,22 @@
         <style>
             .footer {
                 bottom: 0;
-                padding: 19px 15px 20px;
-                position: absolute;
+                padding: 12px 15px;
+                position: fixed;
                 right: 0;
                 color: #98a6ad;
                 left: 0px !important;
                 background-color: #38414a;
+            }
+            .footer-text a:hover {
+                color: white !important;
             }
             .footer-text a {
                 color: rgba(255, 255, 255, .6);
                 font-size : 15px;
             }
             .footer-logo-lg {
-                margin-left: 1rem !important;
+                margin-left: 3.5rem !important;
             }
         </style>
     </head>
