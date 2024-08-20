@@ -13,7 +13,7 @@
                 <div class="col-12">
                     <div class="verify-container mt-2">
                         <div class="verify-container-top">
-                            <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="d-none d-lg-block rounded-circle login-content-image" height="200">
+                            <img src="{{ asset('/login_assets/bg/logo1.jpg') }}" alt="user-image" class="d-none d-lg-block rounded-circle login-content-image" height="200">
                             <div class="verify-container-top-informs">
                                 <p class="verify-container-informs-header mb-2">Verify your email!</p>
                                 <div class="verify-container-informs-body">

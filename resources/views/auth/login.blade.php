@@ -77,7 +77,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="field-3" class="control-label">E-mail</label>
-                                                <input type="text" class="form-control" id="forgot-password_email" placeholder="E-mail">
+                                                <input type="text" class="form-control" id="forgot-password-email" placeholder="E-mail">
                                             </div>
                                         </div>
                                     </div>
@@ -126,14 +126,14 @@
         });
 
         let forgot_password = () => {
-            if( $("#forgot-password_email").val() === "" ) {
+            if( $("#forgot-password-email").val() === "" ) {
                 $.NotificationApp.send("Alarm!"
                     ,"Type your email address please!"
                     ,"top-right"
                     ,"#2ebbdb"
                     ,"error",
                 );
-                $("#forgot-password_email").focus();
+                $("#forgot-password-mail").focus();
                 return;
             }
             elementBlock('square1', '.modal-dialog');
@@ -141,7 +141,7 @@
                 type: "POST",
                 url: 'forgot-password',
                 data: {
-                    email : $("#forgot-password_email").val(),
+                    email : $("#forgot-password-email").val(),
                     _token : '{{ csrf_token() }}'
                 }
             }).done(function( msg ) {

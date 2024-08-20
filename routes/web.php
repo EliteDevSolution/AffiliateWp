@@ -23,7 +23,7 @@ Route::resource('reset-password/{email}', 'Auth\ResetPasswordController')->only(
     'index' => 'reset.index',
 ]);
 
-Route::post('reset-password/update_password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
+Route::post('reset-password/update-password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
 
 Route::group(['middleware' => ['auth', 'approved']], function () {
 
