@@ -40,6 +40,8 @@ class FacebookController extends Controller
         //
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -71,6 +73,22 @@ class FacebookController extends Controller
     public function edit($id)
     {
         //
+    }
+
+    public function redirecet_facebook() {
+        $this->facebook = new FacebookProvider();
+        $helper = $this->facebook->facebookHelper();
+        try {
+            $accessToken = $helper->getAccessToken();
+        } catch(Facebook\Exception\ResponseException $e) {
+        // When Graph returns an error
+            echo 'Graph returned an error: ' . $e->getMessage();
+            exit;
+        } catch(Facebook\Exception\SDKException $e) {
+            // When validation fails or other local issues
+            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            exit;
+        }
     }
 
     /**

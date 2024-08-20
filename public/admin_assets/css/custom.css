@@ -1,3 +1,7 @@
+label {
+    cursor: pointer !important;
+}
+
 .left-side-menu {
     background-color: #263544;
 }
