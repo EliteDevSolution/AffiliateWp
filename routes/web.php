@@ -6,7 +6,6 @@ Route::get('lang/{locale}',function ($locale){
 
 Auth::routes(['register' => true]);
 
-
 // Change Password Routes...
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
