@@ -7,11 +7,11 @@
         max-width: 900px;
         margin: 0 auto;
         padding-top: 71px;
-        height: 100%;
         position: absolute;
         left: 0;
         right: 0;
         top: 30;
+        padding-bottom: 60px;
     }
     .update-date {
         text-align: right;
@@ -97,11 +97,10 @@
         <h3>12. Contact Us</h2>
         <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
         <ul>
-            <li><strong>Email:</strong> [Your Contact Email]</li>
-            <li><strong>Address:</strong> [Your Business Address]</li>
-            <li><strong>Phone:</strong> [Your Contact Phone Number]</li>
+            <li><strong>Email:</strong> p.salas@publycity.com.mx</li>
+            <li><strong>Address:</strong> Madrid, 28007, SPAIN</li>
+            <li><strong>Phone:</strong> +52 1 663 103 1827</li>
         </ul>
-
         <p>We will do our best to address your concerns and provide you with any additional information you may need.</p>
     </div>
 @endsection

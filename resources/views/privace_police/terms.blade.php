@@ -7,11 +7,11 @@
         max-width: 900px;
         margin: 0 auto;
         padding-top: 71px;
-        height: 100%;
         position: absolute;
         left: 0;
         right: 0;
         top: 30;
+        padding-bottom: 60px;
     }
 </style>
 
