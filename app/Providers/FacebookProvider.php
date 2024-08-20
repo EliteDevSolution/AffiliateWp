@@ -15,7 +15,7 @@ class FacebookProvider extends ServiceProvider
         $this->facebook = new Facebook([
             'app_id' => config('facebook.app_id'),
             'app_secret' => config('facebook.app_secret'),
-            'default_graph_version' => 'v11.0'
+            'default_graph_version' => 'v11.0',
         ]);
     }
 

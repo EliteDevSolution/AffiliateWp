@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Social;
 
 use App\Http\Controllers\Controller;
 use App\Providers\FacebookProvider;
+use Session;
 // use App\Http\Controllers\Helpers\FacebookHelper;
+
 
 use Illuminate\Http\Request;
 
@@ -79,11 +81,16 @@ class FacebookController extends Controller
         //
     }
 
-    public function redirecet_facebook() {
+    public function redirecet_facebook(Request $request) {
+
         $helper = $this->facebook->facebookHelper();
+
+        if ($request->get('state')) {
+            $helper->getPersistentDataHandler()->set('state', $request->get('state'));
+        }
+
         try {
             $accessToken = $helper->getAccessToken();
-            dd($accessToken->getValue());
         } catch(Facebook\Exception\ResponseException $e) {
         // When Graph returns an error
             echo 'Graph returned an error: ' . $e->getMessage();
