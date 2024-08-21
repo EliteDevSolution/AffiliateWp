@@ -49,36 +49,35 @@
             <div class="row mt-4 social-section">
                 <div class="col">
                     @if($facebook)
-                        ue">
-                        <div class="social-card-image mt-3">
-                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 34 34"><path fill="white" d="M17.002.337C7.798.337.337 7.798.337 17.002c0 8.317 6.093 15.21 14.061 16.465V21.82h-4.233v-4.818h4.233V13.33c0-4.18 2.489-6.485 6.294-6.485 1.823 0 3.733.325 3.733.325v4.098h-2.107c-2.066 0-2.713 1.287-2.713 2.605V17h4.618l-.738 4.818h-3.88v11.647c7.968-1.249 14.062-8.144 14.062-16.462 0-9.204-7.462-16.665-16.665-16.665z"></path></svg>
-                            <span class="social-card-name text-white">Facebook</span>
+                        <div class="card card-body bg-blue">
+                            <div class="social-card-image mt-3">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 34 34"><path fill="white" d="M17.002.337C7.798.337.337 7.798.337 17.002c0 8.317 6.093 15.21 14.061 16.465V21.82h-4.233v-4.818h4.233V13.33c0-4.18 2.489-6.485 6.294-6.485 1.823 0 3.733.325 3.733.325v4.098h-2.107c-2.066 0-2.713 1.287-2.713 2.605V17h4.618l-.738 4.818h-3.88v11.647c7.968-1.249 14.062-8.144 14.062-16.462 0-9.204-7.462-16.665-16.665-16.665z"></path></svg>
+                                <span class="social-card-name text-white">Facebook</span>
+                            </div>
+                            <h4 class="text-white">{{ '@'.reset($facebook)['social_id'] }}</h4>
+                            <div class="approved-image">
+                                <img src="{{ asset("common_assets/icons/approved.svg") }}" height="30">
+                            </div>
+                            <a href="#" data-type="Facebook" class="btn-disconnect text-white waves-light mt-4 font-15 text-underline">Disconnect</a>
                         </div>
-                        <h4 class="text-white">{{ '@'.reset($facebook)['social_id'] }}</h4>
-                        <div class="approved-image">
-                            <img src="{{ asset("common_assets/icons/approved.svg") }}" height="30">
+                    @else
+                        <div class="card card-body">
+                            <div class="social-card-image mt-3">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 34 34"><path fill="#43629F" d="M17.002.337C7.798.337.337 7.798.337 17.002c0 8.317 6.093 15.21 14.061 16.465V21.82h-4.233v-4.818h4.233V13.33c0-4.18 2.489-6.485 6.294-6.485 1.823 0 3.733.325 3.733.325v4.098h-2.107c-2.066 0-2.713 1.287-2.713 2.605V17h4.618l-.738 4.818h-3.88v11.647c7.968-1.249 14.062-8.144 14.062-16.462 0-9.204-7.462-16.665-16.665-16.665z"></path></svg>
+                                <span class="social-card-name">Facebook</span>
+                            </div>
+                            <span class="card-body-text">Connect your Facebook business page</span>
+                            <a href="{{ route('facebook-login') }}" class="card-btn btn btn-primary waves-light mt-4">Connect</a>
                         </div>
-                        <a href="#" data-type="Facebook" class="btn-disconnect text-white waves-light mt-4 font-15 text-underline">Disconnect</a>
+                    @endif
                 </div>
-                @else
-                    <div class="card card-body">
-                        <div class="social-card-image mt-3">
-                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 34 34"><path fill="#43629F" d="M17.002.337C7.798.337.337 7.798.337 17.002c0 8.317 6.093 15.21 14.061 16.465V21.82h-4.233v-4.818h4.233V13.33c0-4.18 2.489-6.485 6.294-6.485 1.823 0 3.733.325 3.733.325v4.098h-2.107c-2.066 0-2.713 1.287-2.713 2.605V17h4.618l-.738 4.818h-3.88v11.647c7.968-1.249 14.062-8.144 14.062-16.462 0-9.204-7.462-16.665-16.665-16.665z"></path></svg>
-                            <span class="social-card-name">Facebook</span>
-                        </div>
-                        <span class="card-body-text">Connect your Facebook business page</span>
-                        <a href="{{ route('facebook-login') }}" class="card-btn btn btn-primary waves-light mt-4">Connect</a>
-                    </div>
-                @endif
-            </div>
-
-            <div class="col">
-                @if($instagram)
-                    <div class="card card-body bg-blue">
-                        <div class="social-card-image mt-3">
-                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 32 32"><path fill="white" d="M16 7.988A8 8 0 007.988 16 8 8 0 0016 24.012 8 8 0 0024.012 16 8 8 0 0016 7.988zm0 13.219A5.218 5.218 0 0110.793 16 5.218 5.218 0 0116 10.793 5.218 5.218 0 0121.207 16 5.218 5.218 0 0116 21.207zm8.34-15.414a1.869 1.869 0 00-1.871 1.87c0 1.036.836 1.872 1.87 1.872a1.866 1.866 0 001.872-1.871 1.87 1.87 0 00-1.871-1.871zM31.617 16c0-2.156.02-4.293-.101-6.445-.121-2.5-.692-4.72-2.52-6.547-1.832-1.832-4.047-2.399-6.547-2.52-2.156-.12-4.293-.101-6.445-.101-2.156 0-4.293-.02-6.445.101-2.5.121-4.72.692-6.547 2.52C1.18 4.84.613 7.055.492 9.555.371 11.71.391 13.848.391 16s-.02 4.293.101 6.445c.121 2.5.692 4.719 2.52 6.547 1.832 1.832 4.047 2.398 6.547 2.52 2.156.12 4.293.101 6.445.101 2.156 0 4.293.02 6.445-.101 2.5-.122 4.719-.692 6.547-2.52 1.832-1.832 2.399-4.047 2.52-6.547.125-2.152.101-4.289.101-6.445zm-3.437 9.21A4.963 4.963 0 0127 27c-.55.55-1.078.894-1.79 1.18-2.054.816-6.933.632-9.21.632-2.277 0-7.16.184-9.215-.629a4.964 4.964 0 01-1.789-1.18 4.997 4.997 0 01-1.18-1.788c-.812-2.059-.629-6.938-.629-9.215s-.183-7.16.63-9.215a4.964 4.964 0 011.179-1.789 5.05 5.05 0 011.79-1.18c2.054-.812 6.937-.629 9.214-.629s7.16-.183 9.215.63c.71.284 1.242.628 1.789 1.179.55.55.894 1.078 1.18 1.789.812 2.055.628 6.938.628 9.215s.184 7.156-.632 9.21z"></path></svg>
-                            <span class="social-card-name text-white">Instagram</span>
-                        </div>                        <div class="card card-body bg-bl
+                <div class="col">
+                    @if($instagram)
+                        <div class="card card-body bg-blue">
+                            <div class="social-card-image mt-3">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 32 32"><path fill="white" d="M16 7.988A8 8 0 007.988 16 8 8 0 0016 24.012 8 8 0 0024.012 16 8 8 0 0016 7.988zm0 13.219A5.218 5.218 0 0110.793 16 5.218 5.218 0 0116 10.793 5.218 5.218 0 0121.207 16 5.218 5.218 0 0116 21.207zm8.34-15.414a1.869 1.869 0 00-1.871 1.87c0 1.036.836 1.872 1.87 1.872a1.866 1.866 0 001.872-1.871 1.87 1.87 0 00-1.871-1.871zM31.617 16c0-2.156.02-4.293-.101-6.445-.121-2.5-.692-4.72-2.52-6.547-1.832-1.832-4.047-2.399-6.547-2.52-2.156-.12-4.293-.101-6.445-.101-2.156 0-4.293-.02-6.445.101-2.5.121-4.72.692-6.547 2.52C1.18 4.84.613 7.055.492 9.555.371 11.71.391 13.848.391 16s-.02 4.293.101 6.445c.121 2.5.692 4.719 2.52 6.547 1.832 1.832 4.047 2.398 6.547 2.52 2.156.12 4.293.101 6.445.101 2.156 0 4.293.02 6.445-.101 2.5-.122 4.719-.692 6.547-2.52 1.832-1.832 2.399-4.047 2.52-6.547.125-2.152.101-4.289.101-6.445zm-3.437 9.21A4.963 4.963 0 0127 27c-.55.55-1.078.894-1.79 1.18-2.054.816-6.933.632-9.21.632-2.277 0-7.16.184-9.215-.629a4.964 4.964 0 01-1.789-1.18 4.997 4.997 0 01-1.18-1.788c-.812-2.059-.629-6.938-.629-9.215s-.183-7.16.63-9.215a4.964 4.964 0 011.179-1.789 5.05 5.05 0 011.79-1.18c2.054-.812 6.937-.629 9.214-.629s7.16-.183 9.215.63c.71.284 1.242.628 1.789 1.179.55.55.894 1.078 1.18 1.789.812 2.055.628 6.938.628 9.215s.184 7.156-.632 9.21z"></path></svg>
+                                <span class="social-card-name text-white">Instagram</span>
+                            </div>
                             <h4 class="text-white">{{ '@'.reset($instagram)['social_id'] }}</h4>
                             <div class="approved-image">
                                 <img src="{{ asset("common_assets/icons/approved.svg") }}" height="30">
