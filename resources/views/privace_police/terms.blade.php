@@ -1,22 +1,19 @@
 @extends('layouts.admin')
-
-<style>
-    .terms {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        max-width: 900px;
-        margin: 0 auto;
-        padding-top: 71px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 30;
-        padding-bottom: 100px;
-    }
-</style>
-
 @section('content')
-
+    <style>
+        .terms {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 71px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 30;
+            padding-bottom: 100px;
+        }
+    </style>
     <div class="terms">
         <h1>Terms and Conditions</h1>
         <p><strong>Last Updated: 2024/08/20</strong></p>

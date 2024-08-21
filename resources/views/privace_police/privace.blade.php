@@ -1,27 +1,23 @@
 @extends('layouts.admin')
-
-<style>
-    .privace {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        max-width: 900px;
-        margin: 0 auto;
-        padding-top: 71px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 30;
-        padding-bottom: 100px;
-    }
-    .update-date {
-        text-align: right;
-        font-style: italic;
-    }
-</style>
-
-
 @section('content')
-
+    <style>
+        .privace {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 71px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 30;
+            padding-bottom: 100px;
+        }
+        .update-date {
+            text-align: right;
+            font-style: italic;
+        }
+    </style>
     <div class="privace">
         <h1>Privacy Policy</h1>
         <p class="update-date"><strong>Last Updated:  2024/08/20</strong></p>
@@ -104,5 +100,3 @@
         <p>We will do our best to address your concerns and provide you with any additional information you may need.</p>
     </div>
 @endsection
-
-
