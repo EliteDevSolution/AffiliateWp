@@ -13,9 +13,15 @@ class CreateSocialSite extends Migration
      */
     public function up()
     {
-        Schema::create('social_site', function (Blueprint $table) {
+        Schema::create('social_connector', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('user_id');
+            $table->string('type');
+            $table->string('social_id');
+            $table->string('name')->nullable();
+            $table->string('social_email')->nullable();
+            $table->string('social_avatar')->nullable();
+            $table->string('access_token')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +33,6 @@ class CreateSocialSite extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_site');
+        Schema::dropIfExists('social_connector');
     }
 }

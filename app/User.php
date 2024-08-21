@@ -43,4 +43,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(AdsImage::class, 'user_id');
     }
+
+    public function social_connectors()
+    {
+        return $this->hasMany(SocialConnector::class, 'user_id');
+    }
 }

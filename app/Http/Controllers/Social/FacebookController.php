@@ -91,6 +91,7 @@ class FacebookController extends Controller
 
         try {
             $accessToken = $helper->getAccessToken();
+            $accessToken = "EAAQ5K6wBrBgBOZBzqD1kSxyHqx3o0G1v7H4Ups9qv8ZCqXo7JaYZCBq7R3uKhSIZBCxZAOXV5C6SNKZB5K4LxDcDW5UAE3v8FZAYHZCUOcWrdxQlN5TMGN2EOIR84pNdersvRv3qfFcos3AruB5uKdZCfZAxA8J07WXf6E1rftr5HtaNAFQScYV1IxeRQ4yPXP5BHT40QOubA90ZAogUQUQh2hTSRFXCNWR24oPaMZCmW1FADv1PTR1hQBAB";
             dd($accessToken);
         } catch(Facebook\Exception\ResponseException $e) {
         // When Graph returns an error
