@@ -2,6 +2,11 @@ label {
     cursor: pointer;
 }
 
+.line-h-42
+{
+    line-height: 42px;
+}
+
 .container-fluid
 {
     max-width: 95%;

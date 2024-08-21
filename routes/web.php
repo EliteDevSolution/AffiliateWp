@@ -31,17 +31,20 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
         'index' => 'dashboard.index'
     ]);
 
-    Route::resource('/home', 'Home\HomeController');
+    Route::resource('home', 'Home\HomeController');
 
-    Route::resource('/postflow', 'Postflow\PostflowController');
+    Route::resource('postflow', 'Postflow\PostflowController');
 
-    Route::get('/facebook-login', 'Social\FacebookController@go_to_facebook')->name('facebook-login');
+    Route::get('facebook-login', 'Social\FacebookController@go_to_facebook')->name('facebook-login');
+    Route::get('facebook-callback', 'Social\FacebookController@redirecet_facebook')->name('redirecet_facebook');
 
-    Route::get('/facebook-callback', 'Social\FacebookController@redirecet_facebook')->name('redirecet_facebook');
+    Route::post('social-disconnect', 'Social\SocialConnectorController@disconnectSocial')->name('social.disconnect');
 
     Route::resource('permissions', 'Admin\PermissionsController');
     Route::delete('permissions_mass_destroy', 'Admin\PermissionsController@massDestroy')->name('permissions.mass_destroy');
+
     Route::resource('roles', 'Admin\RolesController');
+
     Route::delete('roles_mass_destroy', 'Admin\RolesController@massDestroy')->name('roles.mass_destroy');
 
     Route::resource('users', 'Admin\UsersController');

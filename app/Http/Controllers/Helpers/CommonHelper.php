@@ -11,6 +11,20 @@
         return $clients;
     }
 
+    function findArrayData($data, $key, $value)
+    {
+        $result = array_filter($data, function($item) use ($key, $value) {
+            return $item[$key] === $value;
+        });
+
+        // Check if any data was found
+        if (!empty($result)) {
+            return $result;
+        } else {
+            return [];
+        }
+    }
+
     function getInocoPass($clientId = null) {
         $database = \App\Http\Controllers\Helpers\FirebaseHelper::connect();
         if (isset($clientId)) {
@@ -20,7 +34,6 @@
         } else {
             return '';
         }
-
     }
 
     function colorReport($inputVar) {

@@ -114,6 +114,8 @@
         <script src="{{ asset('admin_assets/js/vendor.min.js') }}"></script>
         <!-- App js-->
         <script src="{{ asset('admin_assets/js/app.min.js') }}"></script>
+        <!--Global js-->
+        <script src="{{ asset('common_assets/global.js') }}"></script>
 
         <script src="{{ asset('admin_assets/libs/jquery-toast/jquery.toast.min.js') }}"></script>
         <script src="{{ asset('user_assets/js/pages/toastr.init.js') }}"></script>

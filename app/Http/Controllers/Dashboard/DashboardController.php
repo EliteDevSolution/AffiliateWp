@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use Auth;
-use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Helpers\AffiliateHelper;
+use App\Models\SocialConnector;
 
 class DashboardController extends Controller
 {
@@ -26,7 +25,13 @@ class DashboardController extends Controller
     {
         $affiliate = new AffiliateHelper();
         $res = $affiliate->index();
-        return view('dashboard.dashboard');
+        $connectedSocialLst = SocialConnector::where(['user_id' => request()->user()->id])->get()->toArray();
+        $facebook = findArrayData($connectedSocialLst, 'type', 'Facebook');
+        $instagram = findArrayData($connectedSocialLst, 'type', 'Instagram');
+        $tiktok = findArrayData($connectedSocialLst, 'type', 'Tiktok');
+        $twitter = findArrayData($connectedSocialLst, 'type', 'Twitter');
+        $linkedin = findArrayData($connectedSocialLst, 'type', 'Linkedin');
+        return view('dashboard.dashboard', compact('facebook', 'instagram', 'tiktok', 'twitter', 'linkedin'));
     }
 
     /**

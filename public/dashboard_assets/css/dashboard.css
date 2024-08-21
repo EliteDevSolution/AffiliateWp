@@ -4,6 +4,15 @@
     justify-content: space-around;
 }
 
+.btn-primary:hover
+{
+    background-color: #43629f;
+}
+
+.mb-21 {
+    margin-bottom: 21px;
+}
+
 .inform-protect {
     border: 0.5px solid rgb(0, 191, 98);
     border-radius: 5px;
@@ -68,6 +77,14 @@
     align-items: center;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
 .card-image {
     width: 50px !important;
     height: 50px !important;
@@ -77,7 +94,6 @@
 
 .social-card-name {
     font-size: 20px;
-    color: black !important;
     padding-top: 5px;
 }
 
