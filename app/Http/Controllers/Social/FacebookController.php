@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Social;
 
 use App\Http\Controllers\Controller;
 use App\Providers\FacebookProvider;
-use Session;
-// use App\Http\Controllers\Helpers\FacebookHelper;
-
+use App\Models\SocialConnector;
 
 use Illuminate\Http\Request;
 
@@ -91,16 +89,39 @@ class FacebookController extends Controller
 
         try {
             $accessToken = $helper->getAccessToken();
-            $accessToken = "EAAQ5K6wBrBgBOZBzqD1kSxyHqx3o0G1v7H4Ups9qv8ZCqXo7JaYZCBq7R3uKhSIZBCxZAOXV5C6SNKZB5K4LxDcDW5UAE3v8FZAYHZCUOcWrdxQlN5TMGN2EOIR84pNdersvRv3qfFcos3AruB5uKdZCfZAxA8J07WXf6E1rftr5HtaNAFQScYV1IxeRQ4yPXP5BHT40QOubA90ZAogUQUQh2hTSRFXCNWR24oPaMZCmW1FADv1PTR1hQBAB";
-            dd($accessToken);
         } catch(Facebook\Exception\ResponseException $e) {
         // When Graph returns an error
-            echo 'Graph returned an error: ' . $e->getMessage();
-            exit;
+            throw new Exception("Graph returned an error: {$e->getMessage()}");
         } catch(Facebook\Exception\SDKException $e) {
             // When validation fails or other local issues
-            echo 'Facebook SDK returned an error: ' . $e->getMessage();
-            exit;
+            throw new Exception("Facebook SDK returned an error: {$e->getMessage()}");
+        }
+
+        if (!$accessToken->isLongLived()) {
+            $accessToken = $this->facebook->getLongLivedAccessToken();
+        }
+
+        $token = $accessToken->getValue();
+        if($token !== "")
+        {
+            $userData = $this->facebook->getFaceBookUserInfo($accessToken);
+            $userFbId = $userData['id'];
+            $userName = $userData['name'];
+            $userEmail = $userData['email'];
+            $userAvatar = $userData['picture']['url'];
+
+            SocialConnector::updateOrCreate(['user_id' => request()->user()->id], 
+            [
+                'user_id'   =>   request()->user()->id,
+                'type' => 'Facebook',
+                'social_id'   =>  $userFbId,
+                'name' => $userName ?? '',
+                'social_email' => $userEmail ?? '',
+                'social_avatar' => $userAvatar ?? '',
+                'access_token' => $token ?? ''
+            ]);
+
+            return redirect('/');
         }
     }
 

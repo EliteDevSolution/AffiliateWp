@@ -33,6 +33,32 @@ class FacebookProvider extends ServiceProvider
         return $helper;
     }
 
+    public function getLongLivedAccessToken()
+    {
+        try {
+            $oAuth2Client = $this->facebook->getOAuth2Client();
+            return $oAuth2Client->getLongLivedAccessToken($accessToken);
+        } catch (FacebookSDKException $e) {
+            throw new Exception("Error getting a long-lived access token: {$e->getMessage()}");
+        }
+    }
+
+    public function getFaceBookUserInfo($accessToken)
+    {
+        try {
+            // Get the Facebook user profile
+            $response = $this->facebook->get('/me?fields=id,name,email,picture.type(large)', $accessToken);
+            $userData = $response->getGraphNode()->asArray();
+            return $userData;
+        } catch (FacebookResponseException $e) {
+            // Handle Graph API errors
+            throw new Exception("Graph returned an error: {$e->getMessage()}");
+        } catch (FacebookSDKException $e) {
+            // Handle SDK errors
+            throw new Exception("Facebook SDK returned an error: {$e->getMessage()}");
+        }
+    }
+
     /**
      * Register services.
      *

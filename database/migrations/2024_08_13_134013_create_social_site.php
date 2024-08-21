@@ -21,7 +21,7 @@ class CreateSocialSite extends Migration
             $table->string('name')->nullable();
             $table->string('social_email')->nullable();
             $table->string('social_avatar')->nullable();
-            $table->string('access_token')->nullable();
+            $table->string('access_token', 500)->nullable();
             $table->timestamps();
         });
     }
