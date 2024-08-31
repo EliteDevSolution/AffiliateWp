@@ -1,10 +1,142 @@
-
 .postflow-container {
+    margin-top: 100px;
+}
+
+.image-popup
+{
+    padding: 2px !important;
+}
+
+.social-card {
+    position: relative;
+    min-width: 30px;
+    max-width: 80px;
+    width: 100%;
+    height: 70px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgb(233, 233, 233);
+    cursor: pointer;
+}
+.social-card:hover {
+    background-color: rgba(173, 173, 173, 0.71);
+}
+
+.social-card-icon
+{
     display: flex;
-    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.colored-icon
+{
+    width: 27.5px;
+    height: 27.5px;
+    background-size: 27.5px;
+    margin: 12px 0px 0px;
+    display: inline-block;
+    opacity: 1;
+}
+
+.selected-colored-icon
+{
+    width: 47.5px;
+    height: 47.5px;
+    background-size: 47.5px;
+    margin: 12px 0px 0px;
+    display: inline-block;
+    opacity: 1;
+}
+
+.social-connect-title {
+    color: rgb(60, 60, 60);
+    opacity: 1;
+    font-weight: 600;
+    margin-block: 0px;
+    text-align: center;
+    font-size: 16px;
+    display: block;
+}
+
+.connector-selected
+{
+    background-color: rgba(103, 154, 206, 0.74);
+}
+
+.social-icon-approved
+{
     width: 100%;
     height: 100%;
-    padding: 20px;
+    color: red;
+    position: absolute;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.facebook-mask {
+    mask: url("/common_assets/icons/facebook.svg") center center / 27.5px no-repeat;
+    background-color: rgb(14, 118, 168);
+}
+
+.instagram-mask {
+    mask: url("/common_assets/icons/instagram.svg") center center / 27.5px no-repeat;
+    background-color: rgb(220, 50, 117);
+}
+.tiktok-mask {
+    mask: url("/common_assets/icons/tiktok.svg") center center / 27.5px no-repeat;
+    background-color: rgb(0, 0, 0);
+}
+.twitter-mask {
+    mask: url("/common_assets/icons/twitter.svg") center center / 27.5px no-repeat;
+    background-color: rgb(79, 177, 221);
+}
+.linkedin-mask {
+    mask: url("/common_assets/icons/linkedin.svg") center center / 27.5px no-repeat;
+    background-color: rgb(14, 118, 168);
+}
+
+.selected-facebook-mask {
+    mask: url("/common_assets/icons/facebook.svg") center center / 47.5px no-repeat;
+    background-color: rgb(67, 98, 159);
+}
+
+.selected-instagram-mask {
+    mask: url("/common_assets/icons/instagram.svg") center center / 47.5px no-repeat;
+    background-color: rgb(220, 50, 117);
+}
+.selected-tiktok-mask {
+    mask: url("/common_assets/icons/tiktok.svg") center center / 47.5px no-repeat;
+    background-color: rgb(0, 0, 0);
+}
+.selected-twitter-mask {
+    mask: url("/common_assets/icons/twitter.svg") center center / 47.5px no-repeat;
+    background-color: rgb(79, 177, 221);
+}
+.selected-linkedin-mask {
+    mask: url("/common_assets/icons/linkedin.svg") center center / 47.5px no-repeat;
+    background-color: rgb(14, 118, 168);
+}
+.gal-box {
+    border-radius: 8px;
+}
+
+.gal-box:hover {
+    border: 3px solid rgba(198, 194, 194, 0.61);
+}
+
+.filterable-content .selected {
+    border: 3px solid #2978c7f0;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: calc(80vh - 200px); /* 100% of the viewport height minus 50 pixels */
 }
 
 .create-post-container {
@@ -45,5 +177,13 @@
 @media only screen and (max-width:400px) {
     .postflow-container {
         flex-direction: column !important;
+    }
+}
+
+@media (min-width: 576px) {
+    .social-card-icon {
+        min-width: 100%;
+        margin-top: 0px;
+        width: 100%;
     }
 }

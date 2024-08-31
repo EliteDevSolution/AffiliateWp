@@ -1,4 +1,22 @@
 <?php
+
+function getEnableSocialConnectorList()
+    {
+        $connectedSocialLst = \App\Models\SocialConnector::where(['user_id' => request()->user()->id])->get()->toArray();
+        $facebook = findArrayData($connectedSocialLst, 'type', 'Facebook');
+        $instagram = findArrayData($connectedSocialLst, 'type', 'Instagram');
+        $tiktok = findArrayData($connectedSocialLst, 'type', 'Tiktok');
+        $twitter = findArrayData($connectedSocialLst, 'type', 'Twitter');
+        $linkedin = findArrayData($connectedSocialLst, 'type', 'Linkedin');
+        return [
+            'facebook' => $facebook,
+            'instagram' => $instagram,
+            'tiktok' => $tiktok,
+            'twitter' => $twitter,
+            'linkedin' => $linkedin,
+        ];
+    }
+
     function getClient($clientId = null) {
         $database = \App\Http\Controllers\Helpers\FirebaseHelper::connect();
 

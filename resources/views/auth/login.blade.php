@@ -38,7 +38,7 @@
                         {{-- <h2 class="mb-lg-2">FANSTOSELLERS</h2> --}}
                         <div class="form-group mt-3">
                             <div class="text-left login-label">E-mail</div>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
                         </div>
 
                         <div class="text-left login-label">Password</div>
@@ -59,7 +59,7 @@
                             </span>
                         </div>
                     </form>
-                    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">

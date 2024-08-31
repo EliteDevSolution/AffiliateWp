@@ -1,3 +1,9 @@
+    var pickedYear = 0;
+    var pickedMonth = 0;
+    var pickedMonthStr = '';
+    var pickedMonthBaseStr = '';
+    var pickedDay = 0;
+
     const isLeapYear = (year) => {
         return (
             (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
@@ -22,7 +28,7 @@
             'November',
             'December',
         ];
-            let month_picker = document.querySelector('#month-picker');
+            const month_picker = document.querySelector('#month-picker');
             const dayTextFormate = document.querySelector('.day-text-formate');
             const timeFormate = document.querySelector('.time-formate');
             const dateFormate = document.querySelector('.date-formate');
@@ -61,6 +67,7 @@
             let currentDate = new Date();
 
             month_picker.innerHTML = month_names[month];
+            month_picker.setAttribute('data-value', month+1);
 
             calendar_header_year.innerHTML = year;
 
@@ -70,10 +77,15 @@
 
                 let day = document.createElement('div');
                 day.addEventListener('click', function() {
+                    pickedYear = parseInt($('#year').text());
+                    pickedMonth = parseInt($('#month-picker').attr('data-value'));
+                    pickedDay = parseInt($(this).text());
+                    pickedMonthStr = $('#month-picker').text();
+                    pickedMonthBaseStr = pickedMonth < 10 ? `0${pickedMonth}` : $('#month-picker').attr('data-value');
                     calendar_modal();
                 });
                 if (i >= first_day.getDay()) {
-                    day.innerHTML = i - first_day.getDay() + 1;
+                    day.innerHTML = (i - first_day.getDay() + 1).toString();
 
                     if (i - first_day.getDay() + 1 === currentDate.getDate() &&
                         year === currentDate.getFullYear() &&

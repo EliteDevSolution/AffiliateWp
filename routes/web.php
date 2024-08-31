@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
     Route::resource('home', 'Home\HomeController');
 
     Route::resource('postflow', 'Postflow\PostflowController');
+    Route::post('redirect-create-post', 'Postflow\PostflowController@redirectCreatePost')->name('postflow.redirect_create');
 
     Route::get('facebook-login', 'Social\FacebookController@go_to_facebook')->name('facebook-login');
     Route::get('facebook-callback', 'Social\FacebookController@redirecet_facebook')->name('redirecet_facebook');

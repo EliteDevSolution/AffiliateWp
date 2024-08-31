@@ -14,7 +14,30 @@ class PostflowController extends Controller
      */
     public function index()
     {
-        return view('postflow.post');
+        $enabledSocialList = getEnableSocialConnectorList();
+        return view('postflow.post', compact('enabledSocialList'));
+    }
+
+    /**
+     * Redirect post page with regsiter to date via session.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectCreatePost(Request $request)
+    {
+        if($request->ajax()) {
+            try {
+                $createDate = $request->create_date ?? '';
+                session()->put('post_create_date', $createDate);
+                return response()->json(['status' => true]);
+            } catch (Throwable $e) {
+                return response()->json(['status' => false]);
+            }
+        }
+
+
+
     }
 
     /**

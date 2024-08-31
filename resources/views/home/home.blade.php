@@ -1,10 +1,9 @@
 @extends('layouts.admin')
 @section('styles')
     <!-- third party css -->
+    <link href="{{ asset('common_assets/plugin/swiper/swiper.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('home_assets/css/home.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css"/>
     <link href="{{ asset('login_assets/style.css') }}" rel="stylesheet" type="text/css">
-
     <!-- third party css end -->
 @endsection
 
@@ -13,7 +12,7 @@
         <div class="container-fluid">
             <div class="home-container-header mt-3">
                 <div class="header-container-left mt-3">
-                    <p class="header-container-left-title">Good afternoon pablo!</p>
+                    <p class="header-container-left-title">Welcome to {{ auth()->user()->firstname }} {{ auth()->user()->lastname }}!</p>
                     <p class="header-container-left-subtitle mb-4">
                         You have 30 days left of your Free Trial
                     </p>
@@ -119,7 +118,7 @@
                     </div>
                 </div>
 
-                <div class="d-none d-xl-block col-xl-5 col-md-12">
+                <div class="d-xl-block col-xl-5 col-md-12">
                     <div class="next-post-part">
                         <span class="expection-post-title">
                             My upcoming posts
@@ -259,14 +258,22 @@
                 </div>
             </div>
 
-            <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div id="create_post_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="post-modal-body p-4">
+                        <div class="modal-header-part mt-2">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="font-18 text-blue">
-                                        Create your post!
+                                    <p class="font-20 text-blue" id="schedule_date">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-modal-body p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="font-18 text-blue" id="post-data-items">
+                                        No tienes publicaciones en este día. ¡Crea una!
                                     </p>
                                 </div>
                             </div>
@@ -276,14 +283,9 @@
                                 <button type="button" class="mr-2 reset-cancel-btn col-md-3 btn waves-effect" data-dismiss="modal" onclick="close_modal()">
                                     Cancel
                                 </button>
-                                <a href="{{route('postflow.index')}}" class="col-md-8 btn post-modal-btn waves-effect waves-light" onclick="">
+                                <button class="col-md-8 btn post-modal-btn waves-effect waves-light" id="btn_create_post" onclick="gotoPostFlow()">
                                     Create your post for now
-                                </a>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    If you encounter any problem, please contact us at support@socialpiper.com or use our live chat.
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -294,15 +296,14 @@
 @endsection
 
 @section('scripts')
-    @parent
-    @parent
     <!-- third party js -->
     <script src="{{ asset('common_assets/plugin/apexchart/apexcharts.min.js') }}"></script>
     <script src="{{ asset('home_assets/js/calendar.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+    <script src="{{ asset('common_assets/plugin/swiper/swiper.min.js') }}"></script>
     <!-- third party js ends -->
     <script>
-          var options = {
+        const currentDay = new Date().getDate();
+        var options = {
           series: [75],
           chart: {
           height: 280,
@@ -382,12 +383,10 @@
         labels: ['Priper Score'],
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        const chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
 
-    </script>
 
-    <script>
         const swiper = new Swiper('.swiper-container', {
             loop: false,
             nextButton: '.swiper-button-next',
@@ -415,14 +414,27 @@
             }
         });
 
-        let calendar_modal = () => {
-            $("#con-close-modal").css("display", "block");
-            $("#con-close-modal").css("opacity", "1");
+        const calendar_modal = () => {
+            $('#schedule_date').text(`${pickedMonthStr} ${pickedDay}, ${pickedYear}`);
+            pickedDay < currentDay ? $('#btn_create_post').hide() : $('#btn_create_post').show();
+            $("#create_post_modal").modal('show');
         }
 
-        let close_modal = () => {
-            $("#con-close-modal").css("display", "none");
-            $("#con-close-modal").css("opacity", "0");
+        const close_modal = () => {
+            $("#create_post_modal").modal('hide');
+        }
+
+        const gotoPostFlow = () => {
+            $.post("{{ route('postflow.redirect_create') }}", {
+                'create_date': `${pickedYear}-${pickedMonthBaseStr}-${pickedDay}`
+            }).done(function(response) {
+                if(response.status)
+                {
+                    location.href = "{{ route('postflow.index') }}";
+                }
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+
+            });
         }
     </script>
 

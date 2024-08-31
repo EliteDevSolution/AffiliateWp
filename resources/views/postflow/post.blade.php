@@ -1,117 +1,151 @@
+@extends('layouts.admin')
+@section('styles')
+    <link href="{{ asset('postflow_assests/css/post.css') }}" rel="stylesheet" type="text/css">
+@endsection
+@section('content')
+<div class="postflow-container container-fluid">
+    <h2>Crear publicación</h2>
+    <div class="row">
+        <div class="col-md-5 col-sm-5 mt-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="product-title">
+                        <h4><span class="btn btn-warning btn-xs">1</span> Productos de GESE</h4>
+                    </div>
+                    <div class="row filterable-content">
+                        @for($index = 1; $index < 9; $index++)
+                        <div class="col-sm-6 col-xl-3 filter-item all web">
+                            <div class="gal-box selectable">
+                                <a href="#" class="image-popup" title="Product {{ $index }}">
+                                    <img src="{{ asset("postflow_assests/images/products/product-$index.jpg") }}" class="img-fluid cursor-point" alt="work-thumbnail">
+                                </a>
+                            </div> <!-- end gal-box -->
+                        </div> <!-- end col -->
+                        @endfor
+                    </div>
 
-<link href="{{ asset('admin_assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('admin_assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('admin_assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('admin_assets/css/app.horizontal.min.css') }}" rel="stylesheet" type="text/css" />
-
-<link href="{{ asset('postflow_assests/css/post.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('postflow_assests/css/magnific-popup.css') }}" rel="stylesheet" type="text/css">
-
-<div class="postflow-container">
-    <div class="create-post-container col-lg-7 col-md-12">
-        <div class="post-image-gallery">
-            <div class="text-center filter-menu">
-                <a href="javascript: void(0);" class="filter-menu-item active" data-rel="all">All</a>
-                <a href="javascript: void(0);" class="filter-menu-item" data-rel="web">Web Design</a>
-                <a href="javascript: void(0);" class="filter-menu-item" data-rel="graphic">Graphic Design</a>
-                <a href="javascript: void(0);" class="filter-menu-item" data-rel="illustrator">Illustrator</a>
-                <a href="javascript: void(0);" class="filter-menu-item" data-rel="photography">Photography</a>
+                </div>
             </div>
+            <div class="card d-none">
+                <div class="card-body">
+                    <div class="product-title">
+                        <h4><span class="btn btn-warning btn-xs">2</span> Video conferencia</h4>
+                    </div>
 
-            <div class="row filterable-content">
-
-                <div class="col-sm-6 col-xl-3 filter-item all web illustrator">
-                    <div class="gal-box">
-                        <a href="assets/images/small/img-1.jpg" class="image-popup" title="Screenshot-1">
-                            <img src="assets/images/small/img-1.jpg" class="img-fluid" alt="work-thumbnail">
-                        </a>
-                        <div class="gall-info">
-                            <h4 class="font-16 mt-0">Man wearing black jacket</h4>
-                            <a href="javascript: void(0);">
-                                <img src="assets/images/users/user-3.jpg" alt="user-img" class="rounded-circle" height="24" />
-                                <span class="text-muted ml-1">Justin Coke</span>
-                            </a>
-                            <a href="javascript: void(0);" class="gal-like-btn"><i class="mdi mdi-heart-outline text-danger"></i></a>
-                        </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="product-title">
+                        <h4><span class="btn btn-warning btn-xs">2</span> Selecciona dónde publicar</h4>
+                    </div>
+                    <div class="row">
+                        @if($enabledSocialList['facebook'])
+                            <div class="social-card ml-2 connect-facebook social-connected">
+                                <div class="social-card-icon">
+                                    <div class="selected-colored-icon selected-facebook-mask"></div>
+                                </div>
+                            </div>
+                            <div class="social-card ml-2 connector-selected d-none">
+                                <div class="social-card-icon">
+                                    <div class="selected-colored-icon selected-facebook-mask"></div>
+                                    <div class="social-icon-approved"><img alt="" src="{{ asset("common_assets/icons/approved.svg") }}"></div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="social-card ml-2 connect-facebook">
+                                <div class="social-card-icon">
+                                    <div class="colored-icon facebook-mask"></div>
+                                </div>
+                                <span class="social-connect-title">Conectar</span>
+                            </div>
+                        @endif
+                        @if($enabledSocialList['instagram'])
+                            <div class="social-card ml-2 connect-instagram social-connected">
+                                <div class="social-card-icon">
+                                    <div class="selected-colored-icon selected-instagram-mask"></div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="social-card ml-2 connect-instagram">
+                                <div class="social-card-icon">
+                                    <div class="colored-icon instagram-mask"></div>
+                                </div>
+                                <span class="social-connect-title">Conectar</span>
+                            </div>
+                        @endif
+                        @if($enabledSocialList['tiktok'])
+                            <div class="social-card ml-2 connect-tiktok social-connected">
+                                <div class="social-card-icon">
+                                    <div class="selected-colored-icon selected-tiktok-mask"></div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="social-card ml-2 connect-tiktok">
+                                <div class="social-card-icon">
+                                    <div class="colored-icon tiktok-mask"></div>
+                                </div>
+                                <span class="social-connect-title">Conectar</span>
+                            </div>
+                        @endif
+                        @if($enabledSocialList['twitter'])
+                            <div class="social-card ml-2 connect-twitter social-connected">
+                                <div class="social-card-icon">
+                                    <div class="selected-colored-icon selected-twitter-mask"></div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="social-card ml-2 connect-twitter">
+                                <div class="social-card-icon">
+                                    <div class="colored-icon twitter-mask"></div>
+                                </div>
+                                <span class="social-connect-title">Conectar</span>
+                            </div>
+                        @endif
+                        @if($enabledSocialList['linkedin'])
+                            <div class="social-card ml-2 connect-linkedin social-connected">
+                                <div class="social-card-icon">
+                                    <div class="selected-colored-icon selected-linkedin-mask"></div>
+                                </div>
+                            </div>
+                        @else
+                            <div class="social-card ml-2 connect-linkedin">
+                                <div class="social-card-icon">
+                                    <div class="colored-icon linkedin-mask"></div>
+                                </div>
+                                <span class="social-connect-title">Conectar</span>
+                            </div>
+                        @endif
                     </div>
                 </div>
-
-                <div class="col-sm-6 col-xl-3 filter-item all graphic photography">
-                    <div class="gal-box">
-                        <a href="assets/images/small/img-2.jpg" class="image-popup" title="Screenshot-2">
-                            <img src="assets/images/small/img-2.jpg" class="img-fluid" alt="work-thumbnail">
-                        </a>
-                        <div class="gall-info">
-                            <h4 class="font-16 mt-0">Snow covered mountain</h4>
-                            <a href="javascript: void(0);">
-                                <img src="assets/images/users/user-2.jpg" alt="user-img" class="rounded-circle" height="24" />
-                                <span class="text-muted ml-1">Toni Sanchez</span>
-                            </a>
-                            <a href="javascript: void(0);" class="gal-like-btn"><i class="mdi mdi-heart-outline text-danger"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xl-3 filter-item all web illustrator">
-                    <div class="gal-box">
-                        <a href="assets/images/small/img-3.jpg" class="image-popup" title="Screenshot-3">
-                            <img src="assets/images/small/img-3.jpg" class="img-fluid" alt="work-thumbnail">
-                        </a>
-                        <div class="gall-info">
-                            <h4 class="font-16 mt-0">Woman sitting on rock</h4>
-                            <a href="javascript: void(0);">
-                                <img src="assets/images/users/user-4.jpg" alt="user-img" class="rounded-circle" height="24" />
-                                <span class="text-muted ml-1">Maria Crowder</span>
-                            </a>
-                            <a href="javascript: void(0);" class="gal-like-btn"><i class="mdi mdi-heart-outline text-danger"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xl-3 filter-item all graphic illustrator">
-                    <div class="gal-box">
-                        <a href="assets/images/small/img-4.jpg" class="image-popup" title="Screenshot-4">
-                            <img src="assets/images/small/img-4.jpg" class="img-fluid" alt="work-thumbnail">
-                        </a>
-                        <div class="gall-info">
-                            <h4 class="font-16 mt-0">Smiling woman's face</h4>
-                            <a href="javascript: void(0);">
-                                <img src="assets/images/users/user-5.jpg" alt="user-img" class="rounded-circle" height="24" />
-                                <span class="text-muted ml-1">Charles East</span>
-                            </a>
-                            <a href="javascript: void(0);" class="gal-like-btn"><i class="mdi mdi-heart-outline text-danger"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-xl-3 filter-item all web illustrator">
-                    <div class="gal-box">
-                        <a href="assets/images/small/img-5.jpg" class="image-popup" title="Screenshot-5">
-                            <img src="assets/images/small/img-5.jpg" class="img-fluid" alt="work-thumbnail">
-                        </a>
-                        <div class="gall-info">
-                            <h4 class="font-16 mt-0">Brown tabby cat sitting on concrete</h4>
-                            <a href="javascript: void(0);">
-                                <img src="assets/images/users/user-6.jpg" alt="user-img" class="rounded-circle" height="24" />
-                                <span class="text-muted ml-1">David Buchanan</span>
-                            </a>
-                            <a href="javascript: void(0);" class="gal-like-btn"><i class="mdi mdi-heart-outline text-danger"></i></a>
-                        </div>
-                    </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-block btn-lg btn-blue waves-effect waves-light">Crea una publicación para este día</button>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-7 mt-2">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="{{ asset("postflow_assests/images/products/product-1.jpg") }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a
+                        natural lead-in to additional content. This content is a little bit
+                        longer.</p>
+                    <p class="card-text">
+                        <small class="text-muted">test test</small>
+                    </p>
                 </div>
             </div>
         </div>
-
-        <div class="control-post-container">
-            The above component is my parent
-        </div>
-    </div>
-
-    <div class="preview-post-container col-lg-5 col-md-12">
-        sdsd
     </div>
 </div>
+@endsection
+@section('scripts')
+    <!-- third party js -->
+    <script src="{{ asset('postflow_assests/js/post.js') }}"></script>
+    <!-- third party js ends -->
+    <script>
+        const socialApprovedIconUrl = @json(asset("common_assets/icons/approved.svg"));
+    </script>
+@endsection
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="{{ asset('postflow_assests/js/gallery.init.js') }}"></script>
-<script src="{{ asset('postflow_assests/js/jquery.magnific-popup.min.js') }}"></script>

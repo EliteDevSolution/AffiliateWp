@@ -7,6 +7,10 @@ label {
     line-height: 42px;
 }
 
+.cursor-point {
+    cursor: pointer !important;
+}
+
 .container-fluid
 {
     max-width: 95%;

@@ -23,15 +23,10 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $affiliate = new AffiliateHelper();
-        $res = $affiliate->index();
-        $connectedSocialLst = SocialConnector::where(['user_id' => request()->user()->id])->get()->toArray();
-        $facebook = findArrayData($connectedSocialLst, 'type', 'Facebook');
-        $instagram = findArrayData($connectedSocialLst, 'type', 'Instagram');
-        $tiktok = findArrayData($connectedSocialLst, 'type', 'Tiktok');
-        $twitter = findArrayData($connectedSocialLst, 'type', 'Twitter');
-        $linkedin = findArrayData($connectedSocialLst, 'type', 'Linkedin');
-        return view('dashboard.dashboard', compact('facebook', 'instagram', 'tiktok', 'twitter', 'linkedin'));
+        //$affiliate = new AffiliateHelper();
+        //$res = $affiliate->index();
+        $enabledSocialList = getEnableSocialConnectorList();
+        return view('dashboard.dashboard', compact('enabledSocialList'));
     }
 
     /**
