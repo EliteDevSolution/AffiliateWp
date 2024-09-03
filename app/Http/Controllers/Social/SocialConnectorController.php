@@ -50,6 +50,6 @@ class SocialConnectorController extends Controller
     }
 
     public function tikTokWebhook(Request $request) {
-        return "this is webhook";
+        TiktokProvider::handleTikTokCallback();
     }
 }

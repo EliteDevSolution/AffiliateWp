@@ -7,13 +7,38 @@ use Illuminate\Support\ServiceProvider;
 
 class TiktokProvider extends ServiceProvider
 {
-    public static function getTiktokLoginUrl()
+    private $clientId;
+    private $clientSecret;
+    private $redirectUri;
+
+    public function __construct()
     {
-         $url = "https://open-api.tiktok.com/platform/oauth/connect/?client_key=" . config('tiktok.client_key') .
-               "&response_type=code&scope=user.info.basic,video.upload&redirect_uri=" . urlencode(config('tiktok.redirect'));
-        return $url; // Return the URL instead of redirecting
+        $this->clientId = config('tiktok.client_key');
+        $this->clientSecret = config('tiktok.client_secret');
+        $this->redirectUri = config('tiktok.redirect');
     }
 
+    public static function getTiktokLoginUrl()
+    {
+        $url = 'https://www.tiktok.com/v2/auth/authorize';
+        $query = http_build_query([
+            'client_key' => config('tiktok.client_key'),
+            'response_type' => 'code',
+            'scope' => 'user.info.basic',
+            'redirect_uri' => config('tiktok.redirect'),
+            'state' => csrf_token(),
+        ]);
+
+        return ($url . '?' . $query);
+    }
+
+    public static function handleTikTokCallback()
+    {
+        $code = $request->input('code');
+        $state = $request->input('state');
+
+        dd($code, $statu);
+    }
     /**
      * Register services.
      *
