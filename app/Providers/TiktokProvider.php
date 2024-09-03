@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Request;
 
 class TiktokProvider extends ServiceProvider
 {
@@ -32,7 +33,7 @@ class TiktokProvider extends ServiceProvider
         return ($url . '?' . $query);
     }
 
-    public static function handleTikTokCallback()
+    public static function handleTikTokCallback(Request $request)
     {
         $code = $request->input('code');
         $state = $request->input('state');
