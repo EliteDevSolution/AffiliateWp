@@ -38,12 +38,11 @@ class SocialConnectorController extends Controller
 
     public function connectTiktok(Request $request)
     {
-        if($request->ajax()) {
-            try {
-                return response()->json(['status' => true]);
-            } catch (Throwable $e) {
-                return response()->json(['status' => false]);
-            }
+
+        try {
+            return response()->json(['status' => true]);
+        } catch (Throwable $e) {
+            return response()->json(['status' => false]);
         }
     }
 
