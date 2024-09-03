@@ -52,7 +52,7 @@ class TiktokProvider extends ServiceProvider
             ]);
 
             $data = $response->json();
-            dd($response);
+            dd($data);
             if (isset($data['data']['access_token'])) {
                 $accessToken = $data['data']['access_token'];
                 // Fetch the user info
