@@ -37,11 +37,9 @@ class TiktokProvider extends ServiceProvider
     {
         $code = $request->input('code');
         $state = $request->input('state');
-
         // if ($state !== csrf_token()) {
         //     return redirect('/login')->withErrors(['msg' => 'Invalid state token']);
         // }
-
         try {
             $response = Http::asForm()->post('https://open.tiktokapis.com/v2/oauth/token/', [
                 'client_key' => config('tiktok.client_key'),
@@ -52,23 +50,15 @@ class TiktokProvider extends ServiceProvider
             ]);
 
             $data = $response->json();
-// isset($data['data']['access_token'])
-            if (true) {
+            dd($data);
+            if (isset($data['data']['access_token'])) {
                 $accessToken = $data['data']['access_token'];
-                // Fetch the user info
+                dd($accessToken);
                 $userResponse = Http::withToken($accessToken)->get('https://open.tiktokapis.com/v2/user/info/?fields=open_id,union_id,avatar_url,username');
-                $user = $userResponse->json();
-                dd($user);
-                // Here you can handle the user info, register or login the user
-                // Example:
-                // $authUser = User::firstOrCreate([
-                //     'tiktok_id' => $user['data']['user']['open_id'],
-                // ], [
-                //     'name' => $user['data']['user']['display_name'],
-                //     'avatar' => $user['data']['user']['avatar_url'],
-                // ]);
-                // Auth::login($authUser, true);
 
+                $user = $userResponse->json();
+
+                dd($user);
                 return redirect('/home');
             } else {
                 return redirect('/login')->withErrors(['msg' => 'Failed to get access token from TikTok']);
