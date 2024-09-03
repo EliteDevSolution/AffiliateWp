@@ -46,7 +46,7 @@ class SocialConnectorController extends Controller
 
     public function redirectTiktok(Request $request)
     {
-        TiktokProvider::handleTikTokCallback();
+        TiktokProvider::handleTikTokCallback($request);
 
     }
 
