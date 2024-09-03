@@ -56,7 +56,7 @@ class TiktokProvider extends ServiceProvider
             if (true) {
                 $accessToken = $data['data']['access_token'];
                 // Fetch the user info
-                $userResponse = Http::withToken($accessToken)->get('https://open.tiktokapis.com/v2/user/info/');
+                $userResponse = Http::withToken($accessToken)->get('https://open.tiktokapis.com/v2/user/info/?fields=open_id,union_id,avatar_url,username');
                 $user = $userResponse->json();
                 dd($user);
                 // Here you can handle the user info, register or login the user

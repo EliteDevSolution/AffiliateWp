@@ -22,6 +22,7 @@ class CreateSocialConnector extends Migration
             $table->string('social_email')->nullable();
             $table->string('social_avatar')->nullable();
             $table->string('access_token', 500)->nullable();
+            $table->string('refresh_token', 500)->nullable();
             $table->timestamps();
         });
     }
