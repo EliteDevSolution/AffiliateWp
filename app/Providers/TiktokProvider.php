@@ -43,16 +43,16 @@ class TiktokProvider extends ServiceProvider
         // }
 
         try {
-            $response = Http::asForm()->post('https://open-api.tiktok.com/oauth/access_token', [
-                'client_key' => config('tiktok.client_secret'),
-                'client_secret' => config('tiktok.client_key'),
+            $response = Http::asForm()->post('https://open.tiktokapis.com/v2/oauth/token/', [
+                'client_key' => config('tiktok.client_key'),
+                'client_secret' => config('tiktok.client_secret'),
                 'code' => $code,
                 'grant_type' => 'authorization_code',
                 'redirect_uri' => config('tiktok.redirect'),
             ]);
 
             $data = $response->json();
-
+            dd($response);
             if (isset($data['data']['access_token'])) {
                 $accessToken = $data['data']['access_token'];
                 // Fetch the user info
