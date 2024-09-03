@@ -23,6 +23,8 @@ Route::resource('reset-password/{email}', 'Auth\ResetPasswordController')->only(
     'index' => 'reset.index',
 ]);
 
+Route::post('tiktok-callback', 'Social\SocialConnectorController@connectTiktok')->name('redirect-tiktok');
+
 Route::post('reset-password/update-password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
 
 Route::group(['middleware' => ['auth', 'approved']], function () {
@@ -37,7 +39,9 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
     Route::post('redirect-create-post', 'Postflow\PostflowController@redirectCreatePost')->name('postflow.redirect_create');
 
     Route::get('facebook-login', 'Social\FacebookController@go_to_facebook')->name('facebook-login');
-    Route::get('facebook-callback', 'Social\FacebookController@redirecet_facebook')->name('redirecet_facebook');
+    Route::get('facebook-callback', 'Social\FacebookController@redirect_facebook')->name('redirect_facebook');
+
+
 
     Route::post('social-disconnect', 'Social\SocialConnectorController@disconnectSocial')->name('social.disconnect');
 

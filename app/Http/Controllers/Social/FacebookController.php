@@ -79,7 +79,7 @@ class FacebookController extends Controller
         //
     }
 
-    public function redirecet_facebook(Request $request) {
+    public function redirect_facebook(Request $request) {
 
         $helper = $this->facebook->facebookHelper();
 
@@ -110,7 +110,7 @@ class FacebookController extends Controller
             $userEmail = $userData['email'];
             $userAvatar = $userData['picture']['url'];
 
-            SocialConnector::updateOrCreate(['user_id' => request()->user()->id], 
+            SocialConnector::updateOrCreate(['user_id' => request()->user()->id],
             [
                 'user_id'   =>   request()->user()->id,
                 'type' => 'Facebook',
