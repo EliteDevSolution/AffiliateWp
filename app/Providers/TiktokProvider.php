@@ -52,13 +52,14 @@ class TiktokProvider extends ServiceProvider
             ]);
 
             $data = $response->json();
-            dd($data);
-            if (isset($data['data']['access_token'])) {
-                $accessToken = $data['data']['access_token'];
+// isset($data['data']['access_token'])
+            if (true) {
+                // $accessToken = $data['data']['access_token'];
                 // Fetch the user info
-                $userResponse = Http::withToken($accessToken)->get('https://open-api.tiktok.com/user/info/');
+                $accessToken = "act.5jBjJQUdkxaDq1uSjXvhDpWWLMI5MhsTIwjipoTCyDEy2JJe89eeB1OTu3eq!4966.e1";
+                $userResponse = Http::withToken($accessToken)->get('https://open.tiktokapis.com/v2/user/info/');
                 $user = $userResponse->json();
-
+                dd($user);
                 // Here you can handle the user info, register or login the user
                 // Example:
                 // $authUser = User::firstOrCreate([
