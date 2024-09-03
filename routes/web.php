@@ -7,6 +7,7 @@ Route::get('lang/{locale}',function ($locale){
 Auth::routes(['register' => true]);
 
 Route::post('tiktok-webhook', 'Social\SocialConnectorController@tikTokWebhook')->name('tiktok-webhook');
+Route::post('facebook-datadelection-callback', 'Social\FacebookController@dataDelectionCallback')->name('tiktok-webhook');
 
 // Change Password Routes...
 Route::get('change-password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change-password');

@@ -137,6 +137,14 @@ class FacebookController extends Controller
         //
     }
 
+    public function dataDelectionCallback(Request $request) {
+        try {
+            return response()->json(['status' => true]);
+        } catch (Throwable $e) {
+            return response()->json(['status' => false]);
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *
