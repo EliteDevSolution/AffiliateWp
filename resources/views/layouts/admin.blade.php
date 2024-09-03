@@ -32,6 +32,7 @@
                 color: #98a6ad;
                 left: 0px !important;
                 background-color: #38414a;
+                z-index: 999 !important;
             }
             .footer-text a:hover {
                 color: white !important;

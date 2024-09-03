@@ -430,6 +430,7 @@
             }).done(function(response) {
                 if(response.status)
                 {
+                    $("#create_post_modal").modal('hide');
                     location.href = "{{ route('postflow.index') }}";
                 }
             }).fail(function(jqXHR, textStatus, errorThrown) {

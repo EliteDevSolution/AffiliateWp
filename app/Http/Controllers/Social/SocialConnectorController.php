@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Social;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SocialConnector;
+use App\Providers\TiktokProvider;
+
 
 class SocialConnectorController extends Controller
 {
@@ -38,12 +40,16 @@ class SocialConnectorController extends Controller
 
     public function connectTiktok(Request $request)
     {
-
-        try {
-            return response()->json(['status' => true]);
-        } catch (Throwable $e) {
-            return response()->json(['status' => false]);
-        }
+        $loginUrl = TiktokProvider::getTiktokLoginUrl();
+        return redirect($loginUrl);
     }
 
+    public function redirectTiktok(Request $request)
+    {
+        return "this is";
+    }
+
+    public function tikTokWebhook(Request $request) {
+        return "this is webhook";
+    }
 }

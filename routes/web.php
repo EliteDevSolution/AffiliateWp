@@ -6,6 +6,9 @@ Route::get('lang/{locale}',function ($locale){
 
 Auth::routes(['register' => true]);
 
+Route::post('tiktok-webhook', 'Social\SocialConnectorController@tikTokWebhook')->name('tiktok-webhook');
+
+
 // Change Password Routes...
 Route::get('change-password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change-password');
 Route::patch('change-password', 'Auth\ChangePasswordController@changePassword')->name('auth.change-password');
@@ -23,7 +26,6 @@ Route::resource('reset-password/{email}', 'Auth\ResetPasswordController')->only(
     'index' => 'reset.index',
 ]);
 
-Route::post('tiktok-callback', 'Social\SocialConnectorController@connectTiktok')->name('redirect-tiktok');
 
 Route::post('reset-password/update-password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
 
@@ -42,6 +44,8 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
     Route::get('facebook-callback', 'Social\FacebookController@redirect_facebook')->name('redirect_facebook');
 
 
+    Route::get('tiktok-login', 'Social\SocialConnectorController@connectTiktok')->name('tiktok-login');
+    Route::get('tiktok-callback', 'Social\SocialConnectorController@redirectTiktok')->name('tiktok-callback');
 
     Route::post('social-disconnect', 'Social\SocialConnectorController@disconnectSocial')->name('social.disconnect');
 

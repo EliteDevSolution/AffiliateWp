@@ -115,7 +115,7 @@
                                 <span class="social-card-name">Tiktok</span>
                             </div>
                             <span class="card-body-text">Connect your Tiktok account or page</span>
-                            <a href="javascript:void(0);" class="card-btn btn btn-primary waves-light mt-4">Connect</a>
+                            <a href="{{ route('tiktok-login') }}" class="card-btn btn btn-primary waves-light mt-4">Connect</a>
                         </div>
                     @endif
                 </div>
