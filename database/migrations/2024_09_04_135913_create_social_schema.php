@@ -19,7 +19,6 @@ class CreateSocialSchema extends Migration
             $table->string('image_name')->nullable();
             $table->string('post_data')->nullable();
             $table->string('post_date')->nullable();
-            $table->timestamp('created_at')->nullable();
             $table->timestamps();
         });
     }
