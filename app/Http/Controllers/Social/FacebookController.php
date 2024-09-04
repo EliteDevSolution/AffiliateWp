@@ -118,7 +118,8 @@ class FacebookController extends Controller
                 'name' => $userName ?? '',
                 'social_email' => $userEmail ?? '',
                 'social_avatar' => $userAvatar ?? '',
-                'access_token' => $token ?? ''
+                'access_token' => $token ?? '',
+                'refresh_token' => ''
             ]);
 
             return redirect('/');
@@ -145,6 +146,13 @@ class FacebookController extends Controller
         }
     }
 
+    public function dataProcess(Request $request) {
+        try {
+            return response()->json(['status' => true]);
+        } catch (Throwable $e) {
+            return response()->json(['status' => false]);
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *

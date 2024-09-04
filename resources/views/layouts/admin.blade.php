@@ -27,7 +27,7 @@
             .footer {
                 bottom: 0;
                 padding: 12px 15px;
-                position: fixed;
+                position: relative;
                 right: 0;
                 color: #98a6ad;
                 left: 0px !important;

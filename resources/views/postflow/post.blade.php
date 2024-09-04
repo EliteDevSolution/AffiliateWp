@@ -14,16 +14,15 @@
                     </div>
                     <div class="row filterable-content">
                         @for($index = 1; $index < 9; $index++)
-                        <div class="col-sm-6 col-xl-3 filter-item all web">
-                            <div class="gal-box selectable">
-                                <a href="#" class="image-popup" title="Product {{ $index }}">
-                                    <img src="{{ asset("postflow_assests/images/products/product-$index.jpg") }}" class="img-fluid cursor-point" alt="work-thumbnail">
-                                </a>
-                            </div> <!-- end gal-box -->
-                        </div> <!-- end col -->
+                            <div class="col-sm-6 col-xl-3 filter-item all web">
+                                <div class="gal-box selectable">
+                                    <a href="#" class="image-popup" title="Product {{ $index }}">
+                                        <img src="{{ asset("postflow_assests/images/products/product-$index.jpg") }}" class="img-fluid cursor-point" alt="work-thumbnail">
+                                    </a>
+                                </div>
+                            </div>
                         @endfor
                     </div>
-
                 </div>
             </div>
             <div class="card d-none">
@@ -120,11 +119,11 @@
                 </div>
             </div>
             <div>
-                <button type="button" class="btn btn-block btn-lg btn-blue waves-effect waves-light">Crea una publicación para este día</button>
+                <button type="button" class="btn btn-block btn-lg btn-blue waves-effect waves-light" onclick="tiktokPost()">Crea una publicación para este día</button>
             </div>
         </div>
         <div class="col-md-7 col-sm-7 mt-2">
-            <div class="card">
+            <div class="card preview-card">
                 <img class="card-img-top img-fluid" src="{{ asset("postflow_assests/images/products/product-1.jpg") }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Product 1</h5>
@@ -146,6 +145,35 @@
     <!-- third party js ends -->
     <script>
         const socialApprovedIconUrl = @json(asset("common_assets/icons/approved.svg"));
+        let tiktokPost = () => {
+            // $.NotificationApp.send("Alarm!"
+            //     ,"Type your email address please!"
+            //     ,"top-right"
+            //     ,"#2ebbdb"
+            //     ,"error",
+            // );
+
+            // elementBlock('square1', '.modal-dialog');
+            $.ajax({
+                type: "POST",
+                url: 'tiktok-post',
+                data: {
+                    // email : $("#forgot-password-email").val(),
+                    _token : '{{ csrf_token() }}'
+                }
+            }).done(function( msg ) {
+                console.log(msg);
+                // elementUnBlock('.modal-dialog');
+            }).fail(function(xhr, textStatus, errorThrown) {
+                $.NotificationApp.send("Alarm!"
+                    ,"Failed verify email!"
+                    ,"top-right"
+                    ,"#2ebbdb"
+                    ,"error",
+                );
+                // elementUnBlock('.modal-dialog');
+            });
+        }
     </script>
 @endsection
 

@@ -1,9 +1,11 @@
-$(window).on('load', function() {
+$(window).on('load', function () {
     $('.selectable').first().trigger('click');
 });
 
-$(document).ready(function() {
-    $('.selectable').on('click', function() {
+$(document).ready(function () {
+    var socialName = "this is social";
+    $('.selectable').on('click', function () {
+        console.log(socialName);
         // Remove 'selected' class from all images
         $('.selectable').removeClass('selected');
         // Add 'selected' class to the clicked image
@@ -16,7 +18,9 @@ $(document).ready(function() {
         $('div.social-connected').find('div.social-icon-approved').remove();
         $(this).addClass('connector-selected');
         $(this).find('div.social-card-icon').append(
-           `<div class="social-icon-approved"><img alt="" src="${socialApprovedIconUrl}"></div>`
+            `<div class="social-icon-approved"><img alt="" src="${socialApprovedIconUrl}"></div>`
         );
     });
 });
+
+

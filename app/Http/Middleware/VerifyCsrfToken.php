@@ -13,6 +13,7 @@ class VerifyCsrfToken extends BaseVerifier
      */
     protected $except = [
         'tiktok-webhook',
-        'facebook-datadelection-callback'
+        'facebook-datadelection-callback',
+        'facebook-dataprocess'
     ];
 }

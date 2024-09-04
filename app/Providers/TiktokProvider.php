@@ -25,7 +25,7 @@ class TiktokProvider extends ServiceProvider
         $query = http_build_query([
             'client_key' => config('tiktok.client_key'),
             'response_type' => 'code',
-            'scope' => 'user.info.basic',
+            'scope' => 'user.info.basic,video.upload',
             'redirect_uri' => config('tiktok.redirect'),
             'state' => csrf_token(),
         ]);
@@ -50,16 +50,20 @@ class TiktokProvider extends ServiceProvider
             ]);
 
             $data = $response->json();
-            dd($data);
-            if (isset($data['data']['access_token'])) {
-                $accessToken = $data['data']['access_token'];
-                dd($accessToken);
-                $userResponse = Http::withToken($accessToken)->get('https://open.tiktokapis.com/v2/user/info/?fields=open_id,union_id,avatar_url,username');
+            if (isset($data['access_token'])) {
+                $accessToken = $data['access_token'];
+                $refreshToken = $data['refresh_token'];
 
+                $userResponse = Http::withToken($accessToken)->get('https://open.tiktokapis.com/v2/user/info/?fields=open_id,union_id,avatar_url,display_name');
                 $user = $userResponse->json();
 
-                dd($user);
-                return redirect('/home');
+                $return_data = [
+                    "access_token" => $accessToken,
+                    "refresh_token"=> $refreshToken,
+                    "user_inform" => $user['data']
+                ];
+
+                return $return_data;
             } else {
                 return redirect('/login')->withErrors(['msg' => 'Failed to get access token from TikTok']);
             }

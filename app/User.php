@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(SocialConnector::class, 'user_id');
     }
+
+    public function social_schema()
+    {
+        return $this->hasMany(SocialSchema::class, 'user_id');
+    }
 }

@@ -4,8 +4,7 @@
     justify-content: space-around;
 }
 
-.btn-primary:hover
-{
+.btn-primary:hover {
     background-color: #43629f;
 }
 
@@ -111,15 +110,15 @@ a:hover {
 
 .card-btn {
     color: white;
-    background-color : #2a9b85;
+    background-color: #2a9b85;
     border: none;
     font-weight: 600;
     font-size: 16px;
-    padding : 8px 24px;
+    padding: 8px 24px;
 }
 
 .connect-us {
-    font-size : 20px;
+    font-size: 20px;
     color: #027686;
 }
 
@@ -193,12 +192,20 @@ a:hover {
     padding: 60px 12px 0 12px !important;
 }
 
+.social_id_text {
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 @media only screen and (max-width:1200px) {
     .create-account-panel {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
     }
+
     .inform-protect {
         margin-top: 10px !important;
     }
@@ -209,12 +216,14 @@ a:hover {
         margin-top: 10px !important;
         font-size: 30px !important;
     }
+
     .inform-protect-motherboard {
         padding-right: 0px !important;
         padding-top: 20px;
         width: 100%;
         padding-left: 10px !important;
     }
+
     .mobile-protect-title {
         text-align: center !important;
         width: 100% !important;
@@ -222,35 +231,43 @@ a:hover {
         color: black !important;
         margin-top: 30px !important;
     }
+
     .social-section {
-        display:  block !important;
+        display: block !important;
     }
+
     .card-body {
         display: flex;
         flex-direction: row;
-        justify-content:space-between;
+        justify-content: space-between;
     }
+
     .social-card-image {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
+
     .card-image {
         width: 30px !important;
         height: 30px !important;
         margin: auto;
     }
+
     .social-card-name {
         padding: 0px;
     }
+
     .card-btn {
         margin-top: 0px !important;
         font-size: 13px;
     }
+
     .card-body-text {
-        padding-top : 0px;
+        padding-top: 0px;
     }
+
     .agent-part {
         padding: 20px;
         justify-content: center;
@@ -259,6 +276,7 @@ a:hover {
         width: 100%;
         margin-bottom: 20px;
     }
+
     .connect-us-part {
         flex-direction: column !important;
         align-items: center !important;
@@ -269,6 +287,7 @@ a:hover {
     .inform-protect {
         gap: 0px !important;
     }
+
     .card-body {
         display: flex;
         flex-direction: column !important;
