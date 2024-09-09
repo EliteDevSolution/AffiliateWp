@@ -40,7 +40,7 @@
                     </div>
                     <div class="row">
                         @if($enabledSocialList['facebook'])
-                            <div class="social-card ml-2 connect-facebook social-connected">
+                            <div class="social-card ml-2 connect-facebook social-connected" id="facebook">
                                 <div class="social-card-icon">
                                     <div class="selected-colored-icon selected-facebook-mask"></div>
                                 </div>
@@ -60,7 +60,7 @@
                             </div>
                         @endif
                         @if($enabledSocialList['instagram'])
-                            <div class="social-card ml-2 connect-instagram social-connected">
+                            <div class="social-card ml-2 connect-instagram social-connected" id="instagram">
                                 <div class="social-card-icon">
                                     <div class="selected-colored-icon selected-instagram-mask"></div>
                                 </div>
@@ -74,7 +74,7 @@
                             </div>
                         @endif
                         @if($enabledSocialList['tiktok'])
-                            <div class="social-card ml-2 connect-tiktok social-connected">
+                            <div class="social-card ml-2 connect-tiktok social-connected" id="tiktok">
                                 <div class="social-card-icon">
                                     <div class="selected-colored-icon selected-tiktok-mask"></div>
                                 </div>
@@ -88,7 +88,7 @@
                             </div>
                         @endif
                         @if($enabledSocialList['twitter'])
-                            <div class="social-card ml-2 connect-twitter social-connected">
+                            <div class="social-card ml-2 connect-twitter social-connected" id="twitter">
                                 <div class="social-card-icon">
                                     <div class="selected-colored-icon selected-twitter-mask"></div>
                                 </div>
@@ -102,7 +102,7 @@
                             </div>
                         @endif
                         @if($enabledSocialList['linkedin'])
-                            <div class="social-card ml-2 connect-linkedin social-connected">
+                            <div class="social-card ml-2 connect-linkedin social-connected" id="linkedin">
                                 <div class="social-card-icon">
                                     <div class="selected-colored-icon selected-linkedin-mask"></div>
                                 </div>
@@ -119,7 +119,7 @@
                 </div>
             </div>
             <div>
-                <button type="button" class="btn btn-block btn-lg btn-blue waves-effect waves-light" onclick="tiktokPost()">Crea una publicación para este día</button>
+                <button type="button" class="btn btn-block btn-lg btn-blue waves-effect waves-light" onclick="scheduleTiktok()">Crea una publicación para este día</button>
             </div>
         </div>
         <div class="col-md-7 col-sm-7 mt-2">
@@ -141,10 +141,61 @@
 @endsection
 @section('scripts')
     <!-- third party js -->
+    <script>
+        var scheduleDate = "{{ session('post_create_date') }}";
+    </script>
     <script src="{{ asset('postflow_assests/js/post.js') }}"></script>
     <!-- third party js ends -->
     <script>
         const socialApprovedIconUrl = @json(asset("common_assets/icons/approved.svg"));
+    </script>
+
+<script>
+        let scheduleTiktok = () => {
+            var scheduleTime = generateScheduleTime();
+
+            if (socialName === "") {
+                $.NotificationApp.send("Alarm!"
+                    , "Type your email address please!"
+                    , "top-right"
+                    , "#2ebbdb"
+                    , "error",
+                );
+                return;
+            } else {
+                elementBlock('square1', 'body');
+                $.ajax({
+                    type: "POST",
+                    url: 'tiktok-schedule',
+                    data: {
+                        scheduleDate: scheduleDate,
+                        scheduleTime: scheduleTime,
+                        imageUrl : "https://masmoney.es/public/postflow_assests/images/products/product-$index.jpg",
+                        socialName : socialName,
+                        _token: '{{ csrf_token() }}'
+                    }
+                }).done(function (msg) {
+                    if(msg == "success") {
+                        $.NotificationApp.send("Alarm!"
+                            ,"Your email is sent!"
+                            ,"top-right"
+                            ,"green"
+                            ,"success",
+                        );
+                    }
+                    elementUnBlock('body');
+                }).fail(function (xhr, textStatus, errorThrown) {
+                    $.NotificationApp.send("Alarm!"
+                        , "Failed verify email!"
+                        , "top-right"
+                        , "#2ebbdb"
+                        , "error",
+                    );
+                    elementUnBlock('body');
+                });
+            }
+        }
+
         let tiktokPost = () => {
             // $.NotificationApp.send("Alarm!"
             //     ,"Type your email address please!"
@@ -159,17 +210,17 @@
                 url: 'tiktok-post',
                 data: {
                     // email : $("#forgot-password-email").val(),
-                    _token : '{{ csrf_token() }}'
+                    _token: '{{ csrf_token() }}'
                 }
-            }).done(function( msg ) {
+            }).done(function (msg) {
                 console.log(msg);
                 // elementUnBlock('.modal-dialog');
-            }).fail(function(xhr, textStatus, errorThrown) {
+            }).fail(function (xhr, textStatus, errorThrown) {
                 $.NotificationApp.send("Alarm!"
-                    ,"Failed verify email!"
-                    ,"top-right"
-                    ,"#2ebbdb"
-                    ,"error",
+                    , "Failed verify email!"
+                    , "top-right"
+                    , "#2ebbdb"
+                    , "error",
                 );
                 // elementUnBlock('.modal-dialog');
             });

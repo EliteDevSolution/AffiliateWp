@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Social;
 
 use App\Http\Controllers\Controller;
-use App\Models\SocialConnector;
 use App\Providers\TiktokProvider;
+use App\Models\SocialConnector;
+use App\Models\SocialSchedule;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -123,6 +124,18 @@ class SocialConnectorController extends Controller
     }
 
     public function scheduleTiktok(Request $request) {
-        return 'Only success!!';
+        try {
+            SocialSchedule::create([
+                'user_id' => request()->user()->id,
+                'social_type' => $request['socialName'],
+                'image_url' => $request['imageUrl'],
+                'post_data' => "",
+                'post_date' => $request['scheduleDate'],
+                'post_time' => $request['scheduleTime'],
+            ]);
+            return "success";
+        } catch (error) {
+            return "failed";
+        }
     }
 }

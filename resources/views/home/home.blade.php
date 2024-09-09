@@ -425,6 +425,7 @@
         }
 
         const gotoPostFlow = () => {
+            console.log(pickedDay);
             $.post("{{ route('postflow.redirect_create') }}", {
                 'create_date': `${pickedYear}-${pickedMonthBaseStr}-${pickedDay}`
             }).done(function(response) {
