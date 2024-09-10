@@ -11,7 +11,7 @@ class AffiliateHelper
     {
         $this->apiKey = config('affiliate.public_key');
         $this->authToken = config('affiliate.public_token');
-        $this->baseUrl = "localhost:8086/wp-json/affwp/v1/affiliates";
+        $this->baseUrl = "http://localhost:8086/wp-json/affwp/v1/affiliates";
     }
 
     /**
@@ -32,6 +32,7 @@ class AffiliateHelper
             ])
             ->asJson()
             ->get();
+            dd($response);
         return $response;
     }
 }

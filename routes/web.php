@@ -28,8 +28,6 @@ Route::resource('reset-password/{email}', 'Auth\ResetPasswordController')->only(
     'index' => 'reset.index',
 ]);
 
-
-
 Route::post('reset-password/update-password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
 
 Route::group(['middleware' => ['auth', 'approved']], function () {
@@ -39,6 +37,8 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
     ]);
 
     Route::resource('home', 'Home\HomeController');
+
+    Route::get('services', 'Services\ServiceController@index')->name('service.index');
 
     Route::resource('postflow', 'Postflow\PostflowController');
     Route::post('redirect-create-post', 'Postflow\PostflowController@redirectCreatePost')->name('postflow.redirect_create');
@@ -65,5 +65,3 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
 
     Route::delete('users_mass_destroy', 'Admin\UsersController@massDestroy')->name('users.mass_destroy');
 });
-
-

@@ -32,9 +32,8 @@ class PostflowController extends Controller
     public function index()
     {
         $enabledSocialList = getEnableSocialConnectorList();
-        $response = Http::withBasicAuth('ck_5c61beb9d65b46f54f08fc2593353e4a982889e7', 'cs_9c5c33ce0a75ba9f80c21481e199f3854e25d76d')
-               ->get('http://localhost:8086/wp-json/wc/v3/products');
-        dd($response->json());
+        // $response = Http::withBasicAuth('ck_5c61beb9d65b46f54f08fc2593353e4a982889e7', 'cs_9c5c33ce0a75ba9f80c21481e199f3854e25d76d')
+        //        ->get('http://localhost:8086/wp-json/wc/v3/products');
 
         // try {
         //     $response = $this->woocommerce->get('products');

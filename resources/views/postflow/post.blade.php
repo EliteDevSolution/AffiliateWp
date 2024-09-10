@@ -156,7 +156,7 @@
 
             if (socialName === "") {
                 $.NotificationApp.send("Alarm!"
-                    , "Type your email address please!"
+                    , "Connect to your social!"
                     , "top-right"
                     , "#2ebbdb"
                     , "error",
@@ -227,4 +227,3 @@
         }
     </script>
 @endsection
-
