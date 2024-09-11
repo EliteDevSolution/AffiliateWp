@@ -11,8 +11,12 @@ class ServiceController extends Controller
     public function index(Request $request)
     {
         $affiliate = new AffiliateHelper();
-        $res = $affiliate->index();
+        $affRes = $affiliate->getAffliateList();
 
-        return view('service.service');
+        $toSendData = [
+            "affliate" => $affRes
+        ];
+
+        return view('service.service', compact('toSendData'));
     }
 }

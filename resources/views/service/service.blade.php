@@ -4,44 +4,36 @@
 @endsection
 @section('content')
 <div class="service-container container-fluid">
-    <h2>Servicio</h2>
-        <div class="table-responsive">
-                                        <table class="table table-bordered mb-0">
-                                            <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@TwBootstrap</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div> <!-- end .table-responsive-->
+    <h4 class="page-title mb-3">Base Url:
+        {{ count($toSendData['affliate'])>0 ? $toSendData['affliate'][0]['base_url'] : ""}}</h4>
+
+    <div class="table-responsive">
+        <table class="table table-bordered mb-0">
+            <thead>
+                <tr>
+                    <th>Rate</th>
+                    <th>Rate Type</th>
+                    <th>Earning</th>
+                    <th>Unpaid earning</th>
+                    <th>Referrals</th>
+                    <th>Visitors</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach ( $toSendData['affliate'] as $affliateIndex => $affliateValue )
+                    <tr>
+                        <th scope="row">{{$affliateValue['rate']}}</th>
+                        <td>{{$affliateValue['rate']}}</td>
+                        <td>{{$affliateValue['rate_type']}}</td>
+                        <td>{{$affliateValue['earnings']}}</td>
+                        <td>{{$affliateValue['unpaid_earnings']}}</td>
+                        <td>{{$affliateValue['visits']}}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection
 @section('scripts')

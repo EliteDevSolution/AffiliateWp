@@ -11,7 +11,7 @@ class AffiliateHelper
     {
         $this->apiKey = config('affiliate.public_key');
         $this->authToken = config('affiliate.public_token');
-        $this->baseUrl = "http://localhost:8086/wp-json/affwp/v1/affiliates";
+        $this->endPoint = config('affiliate.end_point');
     }
 
     /**
@@ -23,16 +23,19 @@ class AffiliateHelper
      * @param array $postData
      * @return  \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function getAffliateList()
     {
-        $response = Curl::to($this->baseUrl)
+        $response = Curl::to($this->endPoint .'/affiliates')
             ->withHeaders([
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Basic ' . base64_encode("{$this->apiKey}:{$this->authToken}")
             ])
-            ->asJson()
             ->get();
-            dd($response);
-        return $response;
+        $jsonResponse = json_decode($response, true); // true converts it to an associative array
+
+        return $jsonResponse;
     }
+
+
+
 }
