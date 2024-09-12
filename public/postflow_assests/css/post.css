@@ -28,6 +28,16 @@
     background-color: rgba(173, 173, 173, 0.71);
 }
 
+.navtab-bg li>a {
+    background-color: #ffffff !important;
+    margin: 0 5px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #7e57c2 !important;
+}
+
 .social-card-icon {
     display: flex;
     -webkit-box-pack: center;
