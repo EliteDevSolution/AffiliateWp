@@ -30,6 +30,9 @@ Route::resource('reset-password/{email}', 'Auth\ResetPasswordController')->only(
 
 Route::post('reset-password/update-password', 'Auth\ResetPasswordController@update_password')->name('reset.update');
 
+Route::get('submit-client', 'SubmitClient\ClientController@index')->name('submit.client');
+Route::post('submit-clientdata', 'SubmitClient\ClientController@submitClient')->name('submit.clientdata');
+
 Route::group(['middleware' => ['auth', 'approved']], function () {
 
     Route::resource('/', 'Dashboard\DashboardController')->names([
@@ -39,6 +42,8 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
     Route::resource('home', 'Home\HomeController');
 
     Route::get('services', 'Services\ServiceController@index')->name('service.index');
+
+    Route::get('overview-client', 'SubmitClient\OverviewClientController@index')->name('service.index');
 
     Route::resource('postflow', 'Postflow\PostflowController');
     Route::post('redirect-create-post', 'Postflow\PostflowController@redirectCreatePost')->name('postflow.redirect_create');

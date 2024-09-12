@@ -157,8 +157,40 @@
                 </div>
             </div>
             <div class="tab-pane show active" id="meeting">
-                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                <p class="mb-0">Vakal text here dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+
+                    <div class="account-pages mt-5 mb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8 col-lg-6 col-xl-5">
+                                    <div class="card bg-pattern">
+                                        <div class="card-body p-4">
+                                            <div class="text-center">
+                                                <a href="index.html">
+                                                    <span>
+                                                        <img src="{{ asset("postflow_assests/images/meet-icon.png")}}" alt="" height="30">
+                                                    </span>
+                                                </a>
+                                            </div>
+
+                                            <div class="text-center mt-4">
+                                                <h3 class="text-error">Google</h3>
+                                                @if ( !auth()->user()->hasRole("administrator") )
+                                                    <h3 class="mt-3 mb-2">Contact support</h3>
+                                                @else
+                                                    <h3 class="mt-3 mb-2">Contact users</h3>
+                                                @endif
+                                                @if ( !auth()->user()->hasRole("administrator") )
+                                                    <a href="index.html" class="mt-3 btn btn-success waves-effect waves-light">Send request</a>
+                                                @else
+                                                    <a href="index.html" class="mt-3 btn btn-success waves-effect waves-light">Send meeting url</a>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
             <div class="tab-pane" id="target">
                 <p>Vakal text here dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
@@ -226,13 +258,6 @@
         }
 
         let tiktokPost = () => {
-            // $.NotificationApp.send("Alarm!"
-            //     ,"Type your email address please!"
-            //     ,"top-right"
-            //     ,"#2ebbdb"
-            //     ,"error",
-            // );
-
             // elementBlock('square1', '.modal-dialog');
             $.ajax({
                 type: "POST",
