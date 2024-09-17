@@ -46,8 +46,10 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
     Route::get('overview-client', 'SubmitClient\OverviewClientController@index')->name('service.index');
 
     Route::resource('postflow', 'Postflow\PostflowController');
+    Route::post('send-call-request', 'Postflow\PostflowController@sendCallRequest')->name('send.callrequest');
     Route::post('redirect-create-post', 'Postflow\PostflowController@redirectCreatePost')->name('postflow.redirect_create');
     Route::post('get-servertime', 'Postflow\PostflowController@getServerTime')->name('get.servertime');
+    Route::get('meeting-callback', 'Postflow\PostflowController@meetingCallback')->name('meeting.callback');
 
     Route::get('facebook-login', 'Social\FacebookController@go_to_facebook')->name('facebook-login');
     Route::get('facebook-callback', 'Social\FacebookController@redirect_facebook')->name('redirect_facebook');

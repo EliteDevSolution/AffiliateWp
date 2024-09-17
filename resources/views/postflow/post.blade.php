@@ -4,200 +4,212 @@
 @endsection
 @section('content')
 <div class="postflow-container container-fluid">
-        <ul class="nav nav-pills navtab-bg nav-justified">
-            <li class="nav-item">
-                <a href="#service" data-toggle="tab" aria-expanded="false" class="nav-link">
-                    Services
+    <div class="row">
+        <div class="col-sm-3 mt-sm-4">
+            <div class="nav flex-column nav-pills nav-pills-tab" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active show mb-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">
+                    My social network
                 </a>
-            </li>
-            <li class="nav-item">
-                <a href="#meeting" data-toggle="tab" aria-expanded="true" class="nav-link active">
-                    Meeting
+                <a class="nav-link mb-2" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                    aria-selected="false">
+                    My whatsapp
                 </a>
-            </li>
-            <li class="nav-item">
-                <a href="#target" data-toggle="tab" aria-expanded="false" class="nav-link">
-                    Target
+                <a class="nav-link mb-2" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+                    aria-selected="false">
+                    My email
                 </a>
-            </li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane" id="service">
-                <div class="row">
-                    <div class="col-md-5 col-sm-5 mt-lg-2">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h4><span class="btn btn-warning btn-xs">1</span> Productos de GESE</h4>
-                                </div>
-                                <div class="row filterable-content">
-                                    @for($index = 1; $index < 9; $index++)
-                                        <div class="col-sm-6 col-xl-3 filter-item all web">
-                                            <div class="gal-box selectable">
+                <a class="nav-link mb-2" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                    aria-selected="false">
+                    Randing page or blog
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="tab-content pt-0">
+                <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <ul class="nav nav-tabs nav-bordered nav-justified">
+                        <li class="nav-item">
+                            <a href="#home-b2" data-toggle="tab" aria-expanded="true" class="nav-link active">
+                                AI PROMPT FOR YOU
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#profile-b2" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                POST NOW
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#messages-b2" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                SHEDULE POST
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home-b2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="product-title mb-4">
+                                        <h4><span class="btn btn-warning btn-xs">1</span> Select services to sell and drag </h4>
+                                    </div>
+                                    <div class="row filterable-content">
+                                        @for($index = 1; $index < 7; $index++)
+                                            <div class="col-2 gal-box selectable">
                                                 <a href="#" class="image-popup" title="Product {{ $index }}">
                                                     <img src="{{ asset("postflow_assests/images/products/product-$index.jpg") }}" class="img-fluid cursor-point" alt="work-thumbnail">
                                                 </a>
                                             </div>
-                                        </div>
-                                    @endfor
+                                        @endfor
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card d-none">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h4><span class="btn btn-warning btn-xs">2</span> Video conferencia</h4>
-                                </div>
 
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="product-title">
-                                    <h4><span class="btn btn-warning btn-xs">2</span> Selecciona dónde publicar</h4>
-                                </div>
-                                <div class="row">
-                                    @if($enabledSocialList['facebook'])
-                                        <div class="social-card ml-2 connect-facebook social-connected" id="facebook">
-                                            <div class="social-card-icon">
-                                                <div class="selected-colored-icon selected-facebook-mask"></div>
-                                            </div>
-                                        </div>
-                                        <div class="social-card ml-2 connector-selected d-none">
-                                            <div class="social-card-icon">
-                                                <div class="selected-colored-icon selected-facebook-mask"></div>
-                                                <div class="social-icon-approved"><img alt="" src="{{ asset("common_assets/icons/approved.svg") }}"></div>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="social-card ml-2 connect-facebook">
-                                            <div class="social-card-icon">
-                                                <div class="colored-icon facebook-mask"></div>
-                                            </div>
-                                            <span class="social-connect-title">Conectar</span>
-                                        </div>
-                                    @endif
-                                    @if($enabledSocialList['instagram'])
-                                        <div class="social-card ml-2 connect-instagram social-connected" id="instagram">
-                                            <div class="social-card-icon">
-                                                <div class="selected-colored-icon selected-instagram-mask"></div>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="social-card ml-2 connect-instagram">
-                                            <div class="social-card-icon">
-                                                <div class="colored-icon instagram-mask"></div>
-                                            </div>
-                                            <span class="social-connect-title">Conectar</span>
-                                        </div>
-                                    @endif
-                                    @if($enabledSocialList['tiktok'])
-                                        <div class="social-card ml-2 connect-tiktok social-connected" id="tiktok">
-                                            <div class="social-card-icon">
-                                                <div class="selected-colored-icon selected-tiktok-mask"></div>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="social-card ml-2 connect-tiktok">
-                                            <div class="social-card-icon">
-                                                <div class="colored-icon tiktok-mask"></div>
-                                            </div>
-                                            <span class="social-connect-title">Conectar</span>
-                                        </div>
-                                    @endif
-                                    @if($enabledSocialList['twitter'])
-                                        <div class="social-card ml-2 connect-twitter social-connected" id="twitter">
-                                            <div class="social-card-icon">
-                                                <div class="selected-colored-icon selected-twitter-mask"></div>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="social-card ml-2 connect-twitter">
-                                            <div class="social-card-icon">
-                                                <div class="colored-icon twitter-mask"></div>
-                                            </div>
-                                            <span class="social-connect-title">Conectar</span>
-                                        </div>
-                                    @endif
-                                    @if($enabledSocialList['linkedin'])
-                                        <div class="social-card ml-2 connect-linkedin social-connected" id="linkedin">
-                                            <div class="social-card-icon">
-                                                <div class="selected-colored-icon selected-linkedin-mask"></div>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="social-card ml-2 connect-linkedin">
-                                            <div class="social-card-icon">
-                                                <div class="colored-icon linkedin-mask"></div>
-                                            </div>
-                                            <span class="social-connect-title">Conectar</span>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-block btn-lg btn-blue waves-effect waves-light" onclick="scheduleTiktok()">Crea una publicación para este día</button>
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-sm-7 mt-2">
-                        <div class="card preview-card">
-                            <img class="card-img-top img-fluid" src="{{ asset("postflow_assests/images/products/product-1.jpg") }}" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Product 1</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a
-                                    natural lead-in to additional content. This content is a little bit
-                                    longer.</p>
-                                <p class="card-text">
-                                    <small class="text-muted">test test</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane show active" id="meeting">
+                            <div id="accordion" class="mb-3">
+                                <div class="card mb-1">
+                                    <div class="card-header" id="socialheadingOne">
+                                        <h5 class="m-0">
+                                            <a class="text-dark" data-toggle="collapse" href="#socialcollapseOne" aria-expanded="false">
+                                                <div class="row filterable-content">
+                                                    @for($index = 1; $index < 7; $index++)
+                                                        <div class="col-2 social-service-container">
+                                                            <div  class="service-place">
+                                                                <img src="{{ asset("postflow_assests/images/plus.png") }}" class="img-fluid cursor-point" alt="work-thumbnail">
+                                                            </div>
 
-                    <div class="account-pages mt-5 mb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-md-8 col-lg-6 col-xl-5">
-                                    <div class="card bg-pattern">
-                                        <div class="card-body p-4">
-                                            <div class="text-center">
-                                                <a href="index.html">
-                                                    <span>
-                                                        <img src="{{ asset("postflow_assests/images/meet-icon.png")}}" alt="" height="30">
-                                                    </span>
-                                                </a>
-                                            </div>
+                                                            <button type="button" class="btn btn-success width-sm waves-effect waves-light">
+                                                                Post
+                                                            </button>
+                                                        </div>
+                                                    @endfor
+                                                </div>
+                                            </a>
+                                        </h5>
+                                    </div>
 
-                                            <div class="text-center mt-4">
-                                                <h3 class="text-error">Google</h3>
-                                                @if ( !auth()->user()->hasRole("administrator") )
-                                                    <h3 class="mt-3 mb-2">Contact support</h3>
+                                    <div id="socialcollapseOne" class="collapse show" aria-labelledby="socialheadingOne" data-parent="#accordion">
+                                        <div class="row m-2 justify-content-around">
+                                                @if($enabledSocialList['facebook'])
+                                                    <div class="social-card ml-2 connect-facebook social-connected" id="facebook">
+                                                        <div class="social-card-icon">
+                                                            <div class="selected-colored-icon selected-facebook-mask"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="social-card ml-2 connector-selected d-none">
+                                                        <div class="social-card-icon">
+                                                            <div class="selected-colored-icon selected-facebook-mask"></div>
+                                                            <div class="social-icon-approved"><img alt="" src="{{ asset("common_assets/icons/approved.svg") }}"></div>
+                                                        </div>
+                                                    </div>
                                                 @else
-                                                    <h3 class="mt-3 mb-2">Contact users</h3>
+                                                    <div class="social-card ml-2 connect-facebook">
+                                                        <div class="social-card-icon">
+                                                            <div class="colored-icon facebook-mask"></div>
+                                                        </div>
+                                                        <span class="social-connect-title">Conectar</span>
+                                                    </div>
                                                 @endif
-                                                @if ( !auth()->user()->hasRole("administrator") )
-                                                    <a href="index.html" class="mt-3 btn btn-success waves-effect waves-light">Send request</a>
+                                                @if($enabledSocialList['instagram'])
+                                                    <div class="social-card ml-2 connect-instagram social-connected" id="instagram">
+                                                        <div class="social-card-icon">
+                                                            <div class="selected-colored-icon selected-instagram-mask"></div>
+                                                        </div>
+                                                    </div>
                                                 @else
-                                                    <a href="index.html" class="mt-3 btn btn-success waves-effect waves-light">Send meeting url</a>
+                                                    <div class="social-card ml-2 connect-instagram">
+                                                        <div class="social-card-icon">
+                                                            <div class="colored-icon instagram-mask"></div>
+                                                        </div>
+                                                        <span class="social-connect-title">Conectar</span>
+                                                    </div>
                                                 @endif
-                                            </div>
+                                                @if($enabledSocialList['tiktok'])
+                                                    <div class="social-card ml-2 connect-tiktok social-connected" id="tiktok">
+                                                        <div class="social-card-icon">
+                                                            <div class="selected-colored-icon selected-tiktok-mask"></div>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="social-card ml-2 connect-tiktok">
+                                                        <div class="social-card-icon">
+                                                            <div class="colored-icon tiktok-mask"></div>
+                                                        </div>
+                                                        <span class="social-connect-title">Conectar</span>
+                                                    </div>
+                                                @endif
+                                                @if($enabledSocialList['twitter'])
+                                                    <div class="social-card ml-2 connect-twitter social-connected" id="twitter">
+                                                        <div class="social-card-icon">
+                                                            <div class="selected-colored-icon selected-twitter-mask"></div>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="social-card ml-2 connect-twitter">
+                                                        <div class="social-card-icon">
+                                                            <div class="colored-icon twitter-mask"></div>
+                                                        </div>
+                                                        <span class="social-connect-title">Conectar</span>
+                                                    </div>
+                                                @endif
+                                                @if($enabledSocialList['linkedin'])
+                                                    <div class="social-card ml-2 connect-linkedin social-connected" id="linkedin">
+                                                        <div class="social-card-icon">
+                                                            <div class="selected-colored-icon selected-linkedin-mask"></div>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="social-card ml-2 connect-linkedin">
+                                                        <div class="social-card-icon">
+                                                            <div class="colored-icon linkedin-mask"></div>
+                                                        </div>
+                                                        <span class="social-connect-title">Conectar</span>
+                                                    </div>
+                                                @endif
+                                                @if($enabledSocialList['linkedin'])
+                                                    <div class="social-card ml-2 connect-linkedin social-connected" id="linkedin">
+                                                        <div class="social-card-icon">
+                                                            <div class="selected-colored-icon selected-linkedin-mask"></div>
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    <div class="social-card ml-2 connect-linkedin">
+                                                        <div class="social-card-icon">
+                                                            <div class="colored-icon linkedin-mask"></div>
+                                                        </div>
+                                                        <span class="social-connect-title">Conectar</span>
+                                                    </div>
+                                                @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-            </div>
-            <div class="tab-pane" id="target">
-                <p>Vakal text here dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-            </div>
-        </div>
 
+                        <div class="tab-pane" id="profile-b2">
+                            Hmmmm
+                        </div>
+
+                        <div class="tab-pane" id="messages-b2">
+                            Hahahaha
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    This is first part
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    This is second part
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    This is third part
+                </div>
+            </div>
+        </div> <!-- end col-->
+    </div> <!-- end row-->
 </div>
 @endsection
 @section('scripts')
@@ -210,74 +222,7 @@
     <script>
         const socialApprovedIconUrl = @json(asset("common_assets/icons/approved.svg"));
     </script>
-
 <script>
-        let scheduleTiktok = () => {
-            var scheduleTime = generateScheduleTime();
 
-            if (socialName === "") {
-                $.NotificationApp.send("Alarm!"
-                    , "Connect to your social!"
-                    , "top-right"
-                    , "#2ebbdb"
-                    , "error",
-                );
-                return;
-            } else {
-                elementBlock('square1', 'body');
-                $.ajax({
-                    type: "POST",
-                    url: 'tiktok-schedule',
-                    data: {
-                        scheduleDate: scheduleDate,
-                        scheduleTime: scheduleTime,
-                        imageUrl : "https://masmoney.es/public/postflow_assests/images/products/product-$index.jpg",
-                        socialName : socialName,
-                        _token: '{{ csrf_token() }}'
-                    }
-                }).done(function (msg) {
-                    if(msg == "success") {
-                        $.NotificationApp.send("Alarm!"
-                            ,"Your email is sent!"
-                            ,"top-right"
-                            ,"green"
-                            ,"success",
-                        );
-                    }
-                    elementUnBlock('body');
-                }).fail(function (xhr, textStatus, errorThrown) {
-                    $.NotificationApp.send("Alarm!"
-                        , "Failed verify email!"
-                        , "top-right"
-                        , "#2ebbdb"
-                        , "error",
-                    );
-                    elementUnBlock('body');
-                });
-            }
-        }
-
-        let tiktokPost = () => {
-            // elementBlock('square1', '.modal-dialog');
-            $.ajax({
-                type: "POST",
-                url: 'tiktok-post',
-                data: {
-                    // email : $("#forgot-password-email").val(),
-                    _token: '{{ csrf_token() }}'
-                }
-            }).done(function (msg) {
-                console.log(msg);
-                // elementUnBlock('.modal-dialog');
-            }).fail(function (xhr, textStatus, errorThrown) {
-                $.NotificationApp.send("Alarm!"
-                    , "Failed verify email!"
-                    , "top-right"
-                    , "#2ebbdb"
-                    , "error",
-                );
-                // elementUnBlock('.modal-dialog');
-            });
-        }
-    </script>
+</script>
 @endsection

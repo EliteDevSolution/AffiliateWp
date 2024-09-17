@@ -11,7 +11,7 @@ class ServiceController extends Controller
     public function index(Request $request)
     {
         $affiliate = new AffiliateHelper();
-        $affRes = $affiliate->getAffliateList();
+        $affRes = $affiliate->getAffliateList() ?? [];
 
         $toSendData = [
             "affliate" => $affRes

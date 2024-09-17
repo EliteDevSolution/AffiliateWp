@@ -5,7 +5,7 @@
 @section('content')
 <div class="service-container container-fluid">
     <h4 class="page-title mb-3">Base Url:
-        {{ count($toSendData['affliate'])>0 ? $toSendData['affliate'][0]['base_url'] : ""}}</h4>
+        {{-- {{ count($toSendData['affliate'])>0 ? $toSendData['affliate'][0]['base_url'] : ""}}</h4> --}}
 
     <div class="table-responsive">
         <table class="table table-bordered mb-0">
@@ -24,11 +24,11 @@
                 @foreach ( $toSendData['affliate'] as $affliateIndex => $affliateValue )
                     <tr>
                         <th scope="row">{{$affliateValue['rate']}}</th>
-                        <td>{{$affliateValue['rate']}}</td>
-                        <td>{{$affliateValue['rate_type']}}</td>
-                        <td>{{$affliateValue['earnings']}}</td>
-                        <td>{{$affliateValue['unpaid_earnings']}}</td>
-                        <td>{{$affliateValue['visits']}}</td>
+                        <td>{{$affliateValue['rate'] ?? ""}}</td>
+                        <td>{{$affliateValue['rate_type'] ?? ""}}</td>
+                        <td>{{$affliateValue['earnings'] ?? ""}}</td>
+                        <td>{{$affliateValue['unpaid_earnings'] ?? ""}}</td>
+                        <td>{{$affliateValue['visits'] ?? ""}}</td>
                     </tr>
                 @endforeach
             </tbody>

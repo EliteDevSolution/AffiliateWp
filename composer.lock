@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94127e1b83a8e62cd158940a1bc67a34",
+    "content-hash": "aa4025ea2339f6b337445e7131921287",
     "packages": [
         {
             "name": "automattic/woocommerce",
@@ -1059,6 +1059,120 @@
                 "source": "https://github.com/firebase/php-jwt/tree/v6.10.0"
             },
             "time": "2023-12-01T16:26:39+00:00"
+        },
+        {
+            "name": "google/apiclient",
+            "version": "v2.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-api-php-client.git",
+                "reference": "789c8b07cad97f420ac0467c782036f955a2ad89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/789c8b07cad97f420ac0467c782036f955a2ad89",
+                "reference": "789c8b07cad97f420ac0467c782036f955a2ad89",
+                "shasum": ""
+            },
+            "require": {
+                "firebase/php-jwt": "~2.0||~3.0||~4.0||~5.0||~6.0",
+                "google/apiclient-services": "~0.200",
+                "google/auth": "^1.10",
+                "guzzlehttp/guzzle": "~5.3.3||~6.0||~7.0",
+                "guzzlehttp/psr7": "^1.8.4||^2.2.1",
+                "monolog/monolog": "^1.17||^2.0||^3.0",
+                "php": "^5.6|^7.0|^8.0",
+                "phpseclib/phpseclib": "~2.0||^3.0.2"
+            },
+            "require-dev": {
+                "cache/filesystem-adapter": "^0.3.2|^1.1",
+                "composer/composer": "^1.10.22",
+                "phpcompatibility/php-compatibility": "^9.2",
+                "phpspec/prophecy-phpunit": "^1.1||^2.0",
+                "phpunit/phpunit": "^5.7.21 || ^6.0 || ^7.0 || ^8.0 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.0",
+                "symfony/css-selector": "~2.1",
+                "symfony/dom-crawler": "~2.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "suggest": {
+                "cache/filesystem-adapter": "For caching certs and tokens (using Google\\Client::setCache)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/aliases.php"
+                ],
+                "psr-4": {
+                    "Google\\": "src/"
+                },
+                "classmap": [
+                    "src/aliases.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "support": {
+                "issues": "https://github.com/googleapis/google-api-php-client/issues",
+                "source": "https://github.com/googleapis/google-api-php-client/tree/v2.14.0"
+            },
+            "time": "2023-05-11T21:54:55+00:00"
+        },
+        {
+            "name": "google/apiclient-services",
+            "version": "v0.373.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleapis/google-api-php-client-services.git",
+                "reference": "88ee17077a2048ba0b2c637754b599be0523fe36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/88ee17077a2048ba0b2c637754b599be0523fe36",
+                "reference": "88ee17077a2048ba0b2c637754b599be0523fe36",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ],
+                "psr-4": {
+                    "Google\\Service\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "support": {
+                "issues": "https://github.com/googleapis/google-api-php-client-services/issues",
+                "source": "https://github.com/googleapis/google-api-php-client-services/tree/v0.373.0"
+            },
+            "time": "2024-09-16T00:56:51+00:00"
         },
         {
             "name": "google/auth",
