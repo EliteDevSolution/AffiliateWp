@@ -117,8 +117,8 @@
         <!-- App js-->
         <script src="{{ asset('admin_assets/js/app.min.js') }}"></script>
         <!--Global js-->
+        <script src="{{ asset('common_assets/plugin/tippy.all.min.js') }}"></script>
         <script src="{{ asset('common_assets/global.js') }}"></script>
-
         <script src="{{ asset('admin_assets/libs/jquery-toast/jquery.toast.min.js') }}"></script>
         <script src="{{ asset('user_assets/js/pages/toastr.init.js') }}"></script>
         <script src="{{ asset('common_assets/plugin/jquery-confirm/jquery-confirm.min.js') }}"></script>

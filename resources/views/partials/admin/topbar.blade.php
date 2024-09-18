@@ -4,7 +4,7 @@
         <div class="logo-box topbar-logo">
             <div class="logo text-right">
                 <a class="logo-lg d-lg-flex flex-row" href="/">
-                    <img src="{{ asset('/login_assets/bg/logo.jpg') }}" alt="user-image" class="rounded-circle" height="45">
+                    <img src="{{ asset('/login_assets/bg/logo_black.png') }}" alt="user-image" class="rounded-circle" height="45">
                     {{-- <h4 class="logo-title ml-1 mt-sm-1 pt-1">@lang('FANSTOSELLERS')</h4> --}}
                 </a>
             </div>
@@ -60,6 +60,12 @@
                     <li class="top-link dropdown d-none d-lg-block ml-3">
                         <a class="nav-link dropdown-toggle waves-effect toolbar-text" data-toggle="" href="{{route('register')}}" >
                             COMMUNITY
+                        </a>
+                    </li>
+
+                    <li class="top-link dropdown d-none d-lg-block ml-3">
+                        <a class="nav-link dropdown-toggle waves-effect toolbar-text" data-toggle="" href="{{route('register')}}" >
+                            DASHBOARD
                         </a>
                     </li>
 
