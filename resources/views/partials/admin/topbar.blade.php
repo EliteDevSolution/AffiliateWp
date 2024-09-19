@@ -52,7 +52,7 @@
                     </li>
 
                     <li class="top-link dropdown d-none d-lg-block ml-3">
-                        <a class="nav-link dropdown-toggle waves-effect toolbar-text" data-toggle="" href="{{route('register')}}" >
+                        <a class="nav-link dropdown-toggle waves-effect toolbar-text" data-toggle="" href="{{route('metric.index')}}" >
                             METRIX
                         </a>
                     </li>

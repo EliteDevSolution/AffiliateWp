@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="home-container-right">
-                    <img src="{{ asset('/home_assets/img/digital_man.png') }}" alt="user-image" class="rounded-circle d-sm-block d-lg-block" height="200">
+                    <img src="{{ asset('/home_assets/img/digital_man.png') }}" alt="user-image" class="rounded-circle -sm-block d-lg-block" height="200">
                     <div class="home-container-chart mb-2">
                         <div id="chart" class="flot-chart mt-2" style="height: 280px;"></div>
                         <p class="font-18 chat-label">

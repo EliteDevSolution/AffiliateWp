@@ -76,7 +76,10 @@ i {
 .toolbar-text:hover {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.1);
-    color: white !important;
+}
+
+.toolbar-text {
+    color: black !important;
 }
 
 .logo {

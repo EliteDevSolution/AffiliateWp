@@ -45,6 +45,8 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
 
     Route::get('overview-client', 'SubmitClient\OverviewClientController@index')->name('service.index');
 
+    Route::get('metric', 'Metrics\MetricsController@index')->name('metric.index');
+
     Route::resource('postflow', 'Postflow\PostflowController');
     Route::post('send-call-request', 'Postflow\PostflowController@sendCallRequest')->name('send.callrequest');
     Route::post('redirect-create-post', 'Postflow\PostflowController@redirectCreatePost')->name('postflow.redirect_create');

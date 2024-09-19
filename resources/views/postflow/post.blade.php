@@ -54,9 +54,9 @@
                                     <div class="row filterable-content">
                                         @for($index = 1; $index < 7; $index++)
                                             <div class="col-2 gal-box selectable">
-                                                <a href="#" class="image-popup" title="Product {{ $index }}">
+                                                <div class="image-popup" title="Product {{ $index }}">
                                                     <img src="{{ asset("postflow_assests/images/products/product-$index.jpg") }}" class="img-fluid cursor-point" alt="work-thumbnail">
-                                                </a>
+                                                </div>
                                             </div>
                                         @endfor
                                     </div>
@@ -192,9 +192,9 @@
                                     <div class="row filterable-content">
                                         @for($index = 1; $index < 7; $index++)
                                             <div class="col-2 gal-box selectable">
-                                                <a href="#" class="image-popup" title="Product {{ $index }}">
+                                                <div class="image-popup" title="Product {{ $index }}">
                                                    <img id="product-{{ $index }}" src="{{ asset("postflow_assests/images/products/product-$index.jpg") }}" class="img-fluid cursor-point" alt="work-thumbnail" draggable="true" ondragstart="drag(event)">
-                                                </a>
+                                                </div>
                                             </div>
                                         @endfor
                                     </div>
@@ -267,9 +267,9 @@
                             <div class="row filterable-content">
                                 @for($index = 1; $index < 7; $index++)
                                     <div class="col-2 gal-box selectable">
-                                        <a href="#" class="image-popup" title="This is url!" data-plugin="tippy" data-tippy-followCursor="true">
+                                        <div class="image-popup" title="This is url!" data-plugin="tippy" data-tippy-followCursor="true">
                                             <img id="product-{{ $index }}" src="{{ asset("postflow_assests/images/products/product-$index.jpg") }}" class="img-fluid cursor-point" alt="work-thumbnail" draggable="true" ondragstart="drag(event)">
-                                        </a>
+                                        </div>
                                         <button class="m-1 btn btn-warning btn-xs waves-effect waves-light">
                                             Copy link
                                         </button>
