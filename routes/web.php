@@ -43,6 +43,8 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
 
     Route::get('services', 'Services\ServiceController@index')->name('service.index');
 
+    Route::get('sale', 'Sale\SaleController@index')->name('sale.index');
+
     Route::get('overview-client', 'SubmitClient\OverviewClientController@index')->name('service.index');
 
     Route::get('metric', 'Metrics\MetricsController@index')->name('metric.index');

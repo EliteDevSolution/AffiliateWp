@@ -40,9 +40,54 @@
             @else
                 <ul class="list-unstyled topnav-menu mb-0">
                     <li class="dropdown d-none d-lg-block logined-toolbar">
-                        <a class="top-link nav-link dropdown-toggle waves-effect toolbar-text" data-toggle="" href="{{route('dashboard.index')}}" >
-                            CALENDER
+                        <a class="nav-link dropdown-toggle top-link waves-effect waves-light toolbar-text" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            SALES
+                            <i class="mdi mdi-chevron-down"></i>
                         </a>
+
+                        <div class="dropdown-menu">
+                            <!-- item-->
+                            <a href="{{route('sale.index')}}" class="dropdown-item">
+                                <i class="fe-briefcase mr-1"></i>
+                                <span>Dashboard</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="fe-user mr-1"></i>
+                                <span>Affliate URLs</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="fe-bar-chart-line- mr-1"></i>
+                                <span>Statistics</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="fe-settings mr-1"></i>
+                                <span>Graphs</span>
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="fe-headphones mr-1"></i>
+                                <span>Refferals</span>
+                            </a>
+
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class="fe-user mr-1"></i>
+                                <span>Visitors</span>
+                            </a>
+
+                            <a href="javascript:void(0);" class="dropdown-item">
+                                <i class=" fe-minimize mr-1"></i>
+                                <span>Creatives</span>
+                            </a>
+                        </div>
                     </li>
 
                     <li class="dropdown d-none d-lg-block ml-3">

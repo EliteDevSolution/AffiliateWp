@@ -2,7 +2,6 @@
 @section('styles')
     <link href="{{ asset('common_assets/plugin/swiper/swiper.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('home_assets/css/home.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('home_assets/css/home.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('metrics/css/metric.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 

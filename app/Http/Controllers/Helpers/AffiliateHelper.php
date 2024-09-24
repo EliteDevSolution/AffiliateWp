@@ -31,11 +31,23 @@ class AffiliateHelper
                 'Authorization' => 'Basic ' . base64_encode("{$this->apiKey}:{$this->authToken}")
             ])
             ->get();
+
         $jsonResponse = json_decode($response, true); // true converts it to an associative array
 
         return $jsonResponse;
     }
 
+    public function getRefferals()
+    {
+        $response = Curl::to($this->endPoint .'/referrals')
+            ->withHeaders([
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Basic ' . base64_encode("{$this->apiKey}:{$this->authToken}")
+            ])
+            ->get();
 
+        $jsonResponse = json_decode($response, true); // true converts it to an associative array
 
+        return $jsonResponse;
+    }
 }
