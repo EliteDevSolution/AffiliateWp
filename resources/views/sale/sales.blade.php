@@ -174,10 +174,10 @@
             </div>
 
             <div class="row mt-2">
-                <div class="col-md-6 col-xl-4">
+                <div class="col-md-6 col-xl-3">
                     <div class="widget-rounded-circle card-box">
                         <div class="row">
-                            <div class="col-md-6 col-xl-3">
+                            <div class="col-md-6 col-xl-4">
                                 <div class="refferal-card-wrapper col-3">
                                     <i class="font-24 mdi mdi-diamond"></i>
                                     <div class="refferal-card-content">
@@ -196,7 +196,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-xl-4">
+                <div class="col-md-6 col-xl-3">
                     <div class="widget-rounded-circle card-box">
                         <div class="row">
                             <div class="col-md-6 col-xl-3">
@@ -218,7 +218,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-xl-4">
+                <div class="col-md-6 col-xl-3">
                     <div class="widget-rounded-circle card-box">
                         <div class="row">
                             <div class="col-md-6 col-xl-3">
