@@ -11,8 +11,8 @@ class RefVistController extends Controller
 {
     public function index() {
         $affiliate = new AffiliateHelper();
-        $referrals = $affiliate->getRefferals();
-        $visitors = $affiliate->getVisitors();
+        $referrals = $affiliate->getRefferals() ?? [];
+        $visitors = $affiliate->getVisitors() ?? [];
 
         return view('sale.refer_visit', compact('referrals', 'visitors'));
     }

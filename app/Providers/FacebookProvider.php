@@ -78,5 +78,4 @@ class FacebookProvider extends ServiceProvider
     {
         //
     }
-
 }

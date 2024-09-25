@@ -89,6 +89,7 @@ class FacebookController extends Controller
 
         try {
             $accessToken = $helper->getAccessToken();
+            dd($accessToken);
         } catch(Facebook\Exception\ResponseException $e) {
         // When Graph returns an error
             throw new Exception("Graph returned an error: {$e->getMessage()}");
