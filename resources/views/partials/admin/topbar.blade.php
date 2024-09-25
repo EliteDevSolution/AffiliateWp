@@ -52,40 +52,26 @@
                                 <span>Dashboard</span>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
+                            <div class="dropdown-divider"></div>
+
+                            <a href="{{route('sale.affiliate.link')}}" class="dropdown-item">
                                 <i class="fe-user mr-1"></i>
                                 <span>Affliate URLs</span>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
+                            <a href="{{route('sale.statistic')}}" class="dropdown-item">
                                 <i class="fe-bar-chart-line- mr-1"></i>
                                 <span>Statistics</span>
                             </a>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
+                            <a href="{{route('sale.graphs')}}" class="dropdown-item">
                                 <i class="fe-settings mr-1"></i>
                                 <span>Graphs</span>
                             </a>
 
-                            <div class="dropdown-divider"></div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item">
+                            <a href="{{route('sale.refer.visit')}}" class="dropdown-item">
                                 <i class="fe-headphones mr-1"></i>
-                                <span>Refferals</span>
-                            </a>
-
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="fe-user mr-1"></i>
-                                <span>Visitors</span>
-                            </a>
-
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class=" fe-minimize mr-1"></i>
-                                <span>Creatives</span>
+                                <span>Refferals & Visitors</span>
                             </a>
                         </div>
                     </li>

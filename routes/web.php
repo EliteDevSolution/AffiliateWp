@@ -44,6 +44,10 @@ Route::group(['middleware' => ['auth', 'approved']], function () {
     Route::get('services', 'Services\ServiceController@index')->name('service.index');
 
     Route::get('sale', 'Sale\SaleController@index')->name('sale.index');
+    Route::get('sale/affiliate-link', 'Sale\AffiliateLinkController@index')->name('sale.affiliate.link');
+    Route::get('sale/statistic', 'Sale\StatistiController@index')->name('sale.statistic');
+    Route::get('sale/graphs', 'Sale\GraphsController@index')->name('sale.graphs');
+    Route::get('sale/refer-visit', 'Sale\RefVistController@index')->name('sale.refer.visit');
 
     Route::get('overview-client', 'SubmitClient\OverviewClientController@index')->name('service.index');
 
