@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="row login-container">
                 <div class="login-content">
-                    <img src="{{ asset('/login_assets/bg/logo1.jpg') }}" alt="user-image" class="rounded-circle mt-5 d-none d-lg-block login-content-image" height="200">
+                    {{-- <img src="{{ asset('/login_assets/bg/logo1.jpg') }}" alt="user-image" class="rounded-circle mt-5 d-none d-lg-block login-content-image" height="200"> --}}
                     <form class="login-form mt-5 text-center" role="form" method="POST" action="{{ url('login') }}">
                         <p class="login-header text-center">Welcome Back!</p>
                         <h5 class="login-subtitle">
